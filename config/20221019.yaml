@@ -1,0 +1,11 @@
+folder : 20221019
+
+tiles_table : "resources/2022109/tiles_to_observe.csv"
+
+obs_date : "2022 09 20"
+robot_temp : 14
+obs_temp : 14
+ImageSource : 'DECALS'
+
+Hector_Linear_location : "/Users/samvaughan/Science/Hector/HectorObservationPipeline/hop/distortion_correction/HectorTranslationSoftware/DataFiles/April2022_Pos/HectorLinear.sds"
+Hector_Distortion_Location : "/Users/samvaughan/Science/Hector/HectorObservationPipeline/hop/distortion_correction/HectorTranslationSoftware/DataFiles/April2022_Pos/HectorDistortion.sds"
