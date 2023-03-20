@@ -2,48 +2,66 @@
 A Snakefile for creating tiles for the Hector Galaxy survey
 """
 from pathlib import Path
+import pandas as pd
 
 # TODO: Fix this
-master_snakemake_folder = "/Users/samvaughan/Science/Hector/Targets/Commissioning/MasterSnakemakeWorkflows/"
+master_snakemake_folder = "/Users/samvaughan/Science/Hector/Observing"
 
+Hector_Rcode_file_version = f"{master_snakemake_folder}/workflow/scripts/HECTOR_Config_v3.5.R"
 
+wildcard_constraints:
+    field = "A3667_A3716|A2399_guide_centre|H01|G23|H03|H01_guide_centre|H03_guide_centre|StarFields_Radial|Stars"
+
+master_folder = config['folder']
+
+df = pd.read_csv(config['tiles_table'], comment='#')
+tile_numbers = df['tile_number'].apply(lambda x: f"{x:03}").values.astype(str)
+fields = df['field'].values.astype(str)
+
+def get_image_source(wildcards):
+    row = (df['field'] == wildcards.field) & (df['tile_number'] == int(wildcards.tile_number))
+    return df.loc[row, 'image_source'].values
 
 rule all:
     input:
-        pipeline_finished_flag = expand(f'results/TilingOutputs/{config["field"]}/FinalOutputs/{config["field"]}_tile_{{tile_number}}_finished.flag', tile_number=tile_numbers),
-        cutout_finished_flag = expand(f'results/Cutouts/{config["field"]}_tile_{{tile_number}}/download_complete.flag', tile_number=tile_numbers),
-        checks_complete = expand(f'results/FileChecks/{config["field"]}/{config["field"]}_tile_{{tile_number}}_checked.flag', tile_number=tile_numbers)
+        pipeline_finished_flag = expand(f'results/{master_folder}/TilingOutputs/{{field}}/FinalOutputs/{{field}}_tile_{{tile_number}}_finished.flag', zip, field=fields, tile_number=tile_numbers),
+        cutout_finished_flag = expand(f'results/{master_folder}/Cutouts/{{field}}_tile_{{tile_number}}/download_complete.flag', zip, field=fields, tile_number=tile_numbers),
+        checks_complete = expand(f'results/{master_folder}/FileChecks/{{field}}/{{field}}_tile_{{tile_number}}_checked.flag', zip, field=fields, tile_number=tile_numbers),
+        final_zipped_file = expand(f'results/{master_folder}/Upload/{{field}}_tile_{{tile_number}}.tar.gz', zip, field=fields, tile_number=tile_numbers),
+        verification_passed_files = expand(f'results/{master_folder}/FileChecks/{{field}}/{{field}}_tile_{{tile_number}}_checked.flag', zip, field=fields, tile_number=tile_numbers)
 
 
 rule run_distortion_correction_code:
     message: "Running the Distortion Correction Code"
     input:
-        tile_file = f'resources/TileFiles/{config["field"]}/tile_{{tile_number}}.fld',
-        guide_file = f'resources/TileFiles/{config["field"]}/guide_tile_{{tile_number}}.fld',
-        pipeline_config_file = config['pipeline_config_file']
+        tile_file = f'resources/{master_folder}/{{field}}/Tiles/tile_{{tile_number}}.fld',
+        guide_file = f'resources/{master_folder}/{{field}}/Tiles/guide_tile_{{tile_number}}.fld',
+        #pipeline_config_file = config['pipeline_config_file']
     output:
-        output_fname = f'results/TilingOutputs/{config["field"]}/DistortionCorrected/{"DC"}_{config["field"]}_tile_{{tile_number}}.csv',
-        output_guide_fname = f'results/TilingOutputs/{config["field"]}/DistortionCorrected/guide_{"DC"}_{config["field"]}_tile_{{tile_number}}.csv'
-    # script:
-    #     'scripts/apply_DC_correction.py'
-    shell:
-        "touch {output_fname} {output_guide_fname}"
+        output_fname = f'results/{master_folder}/TilingOutputs/{{field}}/DistortionCorrected/{"DC"}_{{field}}_tile_{{tile_number}}.csv',
+        output_guide_fname = f'results/{master_folder}/TilingOutputs/{{field}}/DistortionCorrected/guide_{"DC"}_{{field}}_tile_{{tile_number}}.csv'
+    params:
+        field = "{{field}}"
+    script:
+        'scripts/apply_DC_correction.py'
+    # run:
+    #     shell("touch {output.output_fname} {output.output_guide_fname}")
 
 
 rule configure_field:
     message: "Running the Configuration Code"
     input:
-        Hector_Rcode_file = f"{master_snakemake_folder}/scripts/HECTOR_Config_v3.2.R",
+        Hector_Rcode_file = Hector_Rcode_file_version,
         DC_corr_file = rules.run_distortion_correction_code.output.output_fname,
         DC_corr_guide_file = rules.run_distortion_correction_code.output.output_guide_fname
     output:
-        configured_file = f'results/TilingOutputs/{config["field"]}/Configuration/Hexas_{config["field"]}_tile_{{tile_number}}_CONFIGURED.csv',
-        configured_guide_file = f'results/TilingOutputs/{config["field"]}/Configuration/Guides_{config["field"]}_tile_{{tile_number}}_CONFIGURED.csv',
-        plot_filename = f'results/TilingOutputs/{config["field"]}/Plots/Configuration_field_plot_{config["field"]}_tile_{{tile_number}}.pdf'
-    # script:
-    #     "scripts/HECTOR_ClusterFieldsTest.R"
-    shell:
-        "touch {configured_file} {configured_guide_file} {plot_filename}"
+        configured_file = f'results/{master_folder}/TilingOutputs/{{field}}/Configuration/Hexas_{{field}}_tile_{{tile_number}}_CONFIGURED.csv',
+        configured_guide_file = f'results/{master_folder}/TilingOutputs/{{field}}/Configuration/Guides_{{field}}_tile_{{tile_number}}_CONFIGURED.csv',
+        plot_filename = f'results/{master_folder}/TilingOutputs/{{field}}/Plots/Configuration_field_plot_{{field}}_tile_{{tile_number}}.pdf'
+    script:
+        "scripts/HECTOR_ClusterFieldsTest.R"
+    # run:
+    #     shell("touch {output.configured_file} {output.configured_guide_file} {output.plot_filename}")
 
 
 rule update_header:
@@ -54,12 +72,12 @@ rule update_header:
         DC_guide_file = rules.run_distortion_correction_code.output.output_guide_fname,
         configured_guide_field = rules.configure_field.output.configured_guide_file
     output:
-        configured_tile_correct_header = f'results/TilingOutputs/{config["field"]}/Configuration/Hexas_{config["field"]}_tile_{{tile_number}}_CONFIGURED_correct_header.csv',
-        configured_guide_file_correct_header = f'results/TilingOutputs/{config["field"]}/Configuration/Guides_{config["field"]}_tile_{{tile_number}}_CONFIGURED_correct_header.csv'
-    # script:
-    #     "scripts/fix_header_after_configuration.py"
-    shell:
-        "touch {configured_tile_correct_header} {configured_guide_file_correct_header}"
+        configured_tile_correct_header = f'results/{master_folder}/TilingOutputs/{{field}}/Configuration/Hexas_{{field}}_tile_{{tile_number}}_CONFIGURED_correct_header.csv',
+        configured_guide_file_correct_header = f'results/{master_folder}/TilingOutputs/{{field}}/Configuration/Guides_{{field}}_tile_{{tile_number}}_CONFIGURED_correct_header.csv'
+    script:
+        "scripts/fix_header_after_configuration.py"
+    # run:
+    #     shell("touch {output.configured_tile_correct_header} {output.configured_guide_file_correct_header}")
 
 rule allocate_tile:
     message: "Allocating the Hexabundles"
@@ -67,29 +85,32 @@ rule allocate_tile:
         configured_guides_fname = rules.update_header.output.configured_guide_file_correct_header,
         configured_tile_fname = rules.update_header.output.configured_tile_correct_header
     output:
-        flag_file = f'results/TilingOutputs/{config["field"]}/FinalOutputs/{config["field"]}_tile_{{tile_number}}_finished.flag',
-        robot_file = f'results/TilingOutputs/{config["field"]}/FinalOutputs/Robot_FinalFormat_{config["field"]}_tile_{{tile_number}}_CONFIGURED_correct_header.csv',
-        tile_file = f'results/TilingOutputs/{config["field"]}/FinalOutputs/Tile_FinalFormat_{config["field"]}_tile_{{tile_number}}_CONFIGURED_correct_header.csv'
+        flag_file = f'results/{master_folder}/TilingOutputs/{{field}}/FinalOutputs/{{field}}_tile_{{tile_number}}_finished.flag',
+        robot_file = f'results/{master_folder}/TilingOutputs/{{field}}/FinalOutputs/Robot_FinalFormat_{{field}}_tile_{{tile_number}}_CONFIGURED_correct_header.csv',
+        tile_file = f'results/{master_folder}/TilingOutputs/{{field}}/FinalOutputs/Tile_FinalFormat_{{field}}_tile_{{tile_number}}_CONFIGURED_correct_header.csv',
+        plots_folder = directory(f'results/{master_folder}/TilingOutputs/{{field}}/Plots/{{field}}_tile_{{tile_number}}')
     params:
-        output_folder = lambda wildcards: f'{config["field"]}_tile_{wildcards.tile_number}'
-    # script:
-    #     "scripts/allocate_tile_for_galaxies.py"
-    shell:
-        "touch {flag_file} {robot_file} {tile_file}"
+        tile_output_folder = lambda wildcards: f'{wildcards.field}_tile_{wildcards.tile_number}'
+    script:
+        "scripts/allocate_tile_for_galaxies.py"
+    # run:
+    #     shell("touch {output.flag_file} {output.robot_file} {output.tile_file}")
+    #     shell("mkdir {output.plots_folder}")
 
 rule get_galaxy_cutouts:
     message: "Downloading the cutouts"
     input:
         tile_file = rules.allocate_tile.output.tile_file
     output:
-        finished_flag = f'results/Cutouts/{config["field"]}_tile_{{tile_number}}/download_complete.flag'
+        finished_flag = f'results/{master_folder}/Cutouts/{{field}}_tile_{{tile_number}}/download_complete.flag',
+        output_folder = directory(f'results/{master_folder}/Cutouts/{{field}}_tile_{{tile_number}}/')
     params:
-        output_folder = f'results/Cutouts/{config["field"]}_tile_{{tile_number}}/',
-        image_source = config['ImageSource']
-    # script:
-    #     "scripts/get_galaxy_cutouts.py"
-    shell:
-        "touch {finished_flag}"
+        #output_folder = f'results/{master_folder}/Cutouts/{{field}}_tile_{{tile_number}}/',
+        image_source = get_image_source
+    script:
+        "scripts/get_galaxy_cutouts.py"
+    # run:
+    #     shell("touch {output.finished_flag}")
 
 rule check_tile:
     message: "Checking the final files"
@@ -97,8 +118,30 @@ rule check_tile:
         robot_file = rules.allocate_tile.output.robot_file,
         tile_file = rules.allocate_tile.output.tile_file
     output:
-        verification_passed_file = f'results/FileChecks/{config["field"]}/{config["field"]}_tile_{{tile_number}}_checked.flag'
-    # script:
-    #     "scripts/verify_tile_properties.py"
-    shell:
-        "touch {verification_passed_file}"
+        verification_passed_file = f'results/{master_folder}/FileChecks/{{field}}/{{field}}_tile_{{tile_number}}_checked.flag'
+    script:
+        "scripts/verify_tile_properties.py"
+    # run:
+    #     shell("touch {output.verification_passed_file}")
+
+rule collect_outputs:
+    message: "Collecting the outputs into a nice format"
+    input: 
+        robot_file = rules.allocate_tile.output.robot_file,
+        tile_file = rules.allocate_tile.output.tile_file,
+        cutouts_folder = rules.get_galaxy_cutouts.output.output_folder,
+        plots_folder = rules.allocate_tile.output.plots_folder
+    output:
+        final_folder = directory(f'results/{master_folder}/Upload/{{field}}_tile_{{tile_number}}/'),
+        final_zipped_file = f'results/{master_folder}/Upload/{{field}}_tile_{{tile_number}}.tar.gz'
+
+    run:
+        shell("mkdir {output.final_folder}")
+        shell("mkdir {output.final_folder}/Files")
+        shell("cp {input.robot_file} {output.final_folder}/Files")
+        shell("cp {input.tile_file} {output.final_folder}/Files")
+        shell("cp -r {input.cutouts_folder} {output.final_folder}/Cutouts")
+        shell("cp -r {input.plots_folder} {output.final_folder}/Plots")
+        shell("tar -czvf {output.final_zipped_file} {output.final_folder}")
+
+

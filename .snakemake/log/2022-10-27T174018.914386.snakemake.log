@@ -1,0 +1,67 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                   count    min threads    max threads
+------------------  -------  -------------  -------------
+all                       1              1              1
+allocate_tile             1              1              1
+check_tile                1              1              1
+collect_outputs           1              1              1
+get_galaxy_cutouts        1              1              1
+update_header             1              1              1
+total                     6              1              1
+
+Select jobs to execute...
+
+[Thu Oct 27 17:40:19 2022]
+Job 26: Fixing the file headers
+
+[Thu Oct 27 17:40:22 2022]
+Finished job 26.
+1 of 6 steps (17%) done
+Select jobs to execute...
+
+[Thu Oct 27 17:40:22 2022]
+Job 25: Allocating the Hexabundles
+
+[Thu Oct 27 17:40:34 2022]
+Finished job 25.
+2 of 6 steps (33%) done
+Select jobs to execute...
+
+[Thu Oct 27 17:40:34 2022]
+Job 35: Downloading the cutouts
+
+[Thu Oct 27 17:43:25 2022]
+Finished job 35.
+3 of 6 steps (50%) done
+Select jobs to execute...
+
+[Thu Oct 27 17:43:25 2022]
+Job 49: Collecting the outputs into a nice format
+
+[Thu Oct 27 17:43:27 2022]
+Finished job 49.
+4 of 6 steps (67%) done
+Select jobs to execute...
+
+[Thu Oct 27 17:43:27 2022]
+Job 42: Checking the final files
+
+[Thu Oct 27 17:43:28 2022]
+Finished job 42.
+5 of 6 steps (83%) done
+Select jobs to execute...
+
+[Thu Oct 27 17:43:28 2022]
+localrule all:
+    input: results/20221019/TilingOutputs/H01/FinalOutputs/H01_tile_001_finished.flag, results/20221019/TilingOutputs/H01/FinalOutputs/H01_tile_101_finished.flag, results/20221019/TilingOutputs/H03/FinalOutputs/H03_tile_001_finished.flag, results/20221019/TilingOutputs/H03/FinalOutputs/H03_tile_002_finished.flag, results/20221019/TilingOutputs/H03/FinalOutputs/H03_tile_101_finished.flag, results/20221019/TilingOutputs/G23/FinalOutputs/G23_tile_001_finished.flag, results/20221019/TilingOutputs/Stars/FinalOutputs/Stars_tile_001_finished.flag, results/20221019/Cutouts/H01_tile_001/download_complete.flag, results/20221019/Cutouts/H01_tile_101/download_complete.flag, results/20221019/Cutouts/H03_tile_001/download_complete.flag, results/20221019/Cutouts/H03_tile_002/download_complete.flag, results/20221019/Cutouts/H03_tile_101/download_complete.flag, results/20221019/Cutouts/G23_tile_001/download_complete.flag, results/20221019/Cutouts/Stars_tile_001/download_complete.flag, results/20221019/FileChecks/H01/H01_tile_001_checked.flag, results/20221019/FileChecks/H01/H01_tile_101_checked.flag, results/20221019/FileChecks/H03/H03_tile_001_checked.flag, results/20221019/FileChecks/H03/H03_tile_002_checked.flag, results/20221019/FileChecks/H03/H03_tile_101_checked.flag, results/20221019/FileChecks/G23/G23_tile_001_checked.flag, results/20221019/FileChecks/Stars/Stars_tile_001_checked.flag, results/20221019/Upload/H01_tile_001.tar.gz, results/20221019/Upload/H01_tile_101.tar.gz, results/20221019/Upload/H03_tile_001.tar.gz, results/20221019/Upload/H03_tile_002.tar.gz, results/20221019/Upload/H03_tile_101.tar.gz, results/20221019/Upload/G23_tile_001.tar.gz, results/20221019/Upload/Stars_tile_001.tar.gz, results/20221019/FileChecks/H01/H01_tile_001_checked.flag, results/20221019/FileChecks/H01/H01_tile_101_checked.flag, results/20221019/FileChecks/H03/H03_tile_001_checked.flag, results/20221019/FileChecks/H03/H03_tile_002_checked.flag, results/20221019/FileChecks/H03/H03_tile_101_checked.flag, results/20221019/FileChecks/G23/G23_tile_001_checked.flag, results/20221019/FileChecks/Stars/Stars_tile_001_checked.flag
+    jobid: 0
+    resources: tmpdir=/var/folders/bd/ym7_px1s7_53zt92h0rfdb000000gp/T
+
+[Thu Oct 27 17:43:28 2022]
+Finished job 0.
+6 of 6 steps (100%) done
+Complete log: /Users/samvaughan/Science/Hector/Observing/.snakemake/log/2022-10-27T174018.914386.snakemake.log

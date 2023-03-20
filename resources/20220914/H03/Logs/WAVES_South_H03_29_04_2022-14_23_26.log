@@ -1,0 +1,310 @@
+2022-04-29 14:23:27,807: - Robot Temperature: 12 C, Obs Temperature: 12 C. date=2022 01 15
+
+
+2022-04-29 14:23:27,810: - Adding extra columns to the target dataframe
+2022-04-29 14:23:27,834: - Total Targets in field to tile: 477
+
+2022-04-29 14:23:27,835: - Tile 0:
+2022-04-29 14:23:27,835: - 	Remaining Targets: 477
+2022-04-29 14:23:30,502: - 	Tile contains 19 galaxies, of which 0 are repeats
+2022-04-29 14:23:30,502: - FINISHED TILE 0
+
+
+2022-04-29 14:23:30,517: - Tile 1:
+2022-04-29 14:23:30,517: - 	Remaining Targets: 457
+2022-04-29 14:23:33,462: - 	Tile contains 19 galaxies, of which 0 are repeats
+2022-04-29 14:23:33,462: - FINISHED TILE 1
+
+
+2022-04-29 14:23:33,479: - Tile 2:
+2022-04-29 14:23:33,479: - 	Remaining Targets: 435
+2022-04-29 14:23:36,746: - 	Tile contains 19 galaxies, of which 0 are repeats
+2022-04-29 14:23:36,747: - FINISHED TILE 2
+
+
+2022-04-29 14:23:36,763: - Tile 3:
+2022-04-29 14:23:36,763: - 	Remaining Targets: 416
+2022-04-29 14:23:39,318: - 	Tile contains 19 galaxies, of which 0 are repeats
+2022-04-29 14:23:39,318: - FINISHED TILE 3
+
+
+2022-04-29 14:23:39,335: - Tile 4:
+2022-04-29 14:23:39,335: - 	Remaining Targets: 397
+2022-04-29 14:23:42,111: - 	Tile contains 19 galaxies, of which 0 are repeats
+2022-04-29 14:23:42,112: - FINISHED TILE 4
+
+
+2022-04-29 14:23:42,129: - Tile 5:
+2022-04-29 14:23:42,129: - 	Remaining Targets: 378
+2022-04-29 14:23:44,960: - 	Tile contains 19 galaxies, of which 0 are repeats
+2022-04-29 14:23:44,961: - FINISHED TILE 5
+
+
+2022-04-29 14:23:44,979: - Tile 6:
+2022-04-29 14:23:44,979: - 	Remaining Targets: 359
+2022-04-29 14:23:48,186: - 	Tile contains 19 galaxies, of which 0 are repeats
+2022-04-29 14:23:48,186: - FINISHED TILE 6
+
+
+2022-04-29 14:23:48,204: - Tile 7:
+2022-04-29 14:23:48,204: - 	Remaining Targets: 340
+2022-04-29 14:23:51,460: - 	Tile contains 19 galaxies, of which 0 are repeats
+2022-04-29 14:23:51,460: - FINISHED TILE 7
+
+
+2022-04-29 14:23:51,479: - Tile 8:
+2022-04-29 14:23:51,480: - 	Remaining Targets: 321
+2022-04-29 14:23:54,283: - 	Tile contains 19 galaxies, of which 0 are repeats
+2022-04-29 14:23:54,283: - FINISHED TILE 8
+
+
+2022-04-29 14:23:54,303: - Tile 9:
+2022-04-29 14:23:54,304: - 	Remaining Targets: 302
+2022-04-29 14:23:57,486: - 	Tile contains 19 galaxies, of which 0 are repeats
+2022-04-29 14:23:57,487: - FINISHED TILE 9
+
+
+2022-04-29 14:23:57,507: - Tile 10:
+2022-04-29 14:23:57,507: - 	Remaining Targets: 283
+2022-04-29 14:24:00,243: - 	Tile contains 19 galaxies, of which 0 are repeats
+2022-04-29 14:24:00,243: - FINISHED TILE 10
+
+
+2022-04-29 14:24:00,264: - Tile 11:
+2022-04-29 14:24:00,264: - 	Remaining Targets: 264
+2022-04-29 14:24:02,856: - 	Tile contains 19 galaxies, of which 4 are repeats
+2022-04-29 14:24:02,857: - FINISHED TILE 11
+
+
+2022-04-29 14:24:02,878: - Tile 12:
+2022-04-29 14:24:02,878: - 	Remaining Targets: 249
+2022-04-29 14:24:05,415: - 	Tile contains 16 galaxies, of which 0 are repeats
+2022-04-29 14:24:05,415: - FINISHED TILE 12
+
+
+2022-04-29 14:24:05,437: - Tile 13:
+2022-04-29 14:24:05,437: - 	Remaining Targets: 233
+2022-04-29 14:24:08,568: - 	Tile contains 16 galaxies, of which 0 are repeats
+2022-04-29 14:24:08,568: - FINISHED TILE 13
+
+
+2022-04-29 14:24:08,591: - Tile 14:
+2022-04-29 14:24:08,591: - 	Remaining Targets: 217
+2022-04-29 14:24:10,855: - 	Tile contains 15 galaxies, of which 0 are repeats
+2022-04-29 14:24:10,855: - FINISHED TILE 14
+
+
+2022-04-29 14:24:10,879: - Tile 15:
+2022-04-29 14:24:10,879: - 	Remaining Targets: 202
+2022-04-29 14:24:13,299: - 	Tile contains 19 galaxies, of which 6 are repeats
+2022-04-29 14:24:13,299: - FINISHED TILE 15
+
+
+2022-04-29 14:24:13,323: - Tile 16:
+2022-04-29 14:24:13,323: - 	Remaining Targets: 189
+2022-04-29 14:24:16,271: - 	Tile contains 17 galaxies, of which 2 are repeats
+2022-04-29 14:24:16,271: - FINISHED TILE 16
+
+
+2022-04-29 14:24:16,295: - Tile 17:
+2022-04-29 14:24:16,296: - 	Remaining Targets: 174
+2022-04-29 14:24:19,062: - 	Tile contains 12 galaxies, of which 1 are repeats
+2022-04-29 14:24:19,063: - FINISHED TILE 17
+
+
+2022-04-29 14:24:19,089: - Tile 18:
+2022-04-29 14:24:19,089: - 	Remaining Targets: 163
+2022-04-29 14:24:21,901: - 	Tile contains 18 galaxies, of which 3 are repeats
+2022-04-29 14:24:21,901: - FINISHED TILE 18
+
+
+2022-04-29 14:24:21,926: - Tile 19:
+2022-04-29 14:24:21,927: - 	Remaining Targets: 148
+2022-04-29 14:24:24,626: - 	Tile contains 11 galaxies, of which 0 are repeats
+2022-04-29 14:24:24,626: - FINISHED TILE 19
+
+
+2022-04-29 14:24:24,653: - Tile 20:
+2022-04-29 14:24:24,653: - 	Remaining Targets: 137
+2022-04-29 14:24:28,007: - 	Tile contains 19 galaxies, of which 10 are repeats
+2022-04-29 14:24:28,007: - FINISHED TILE 20
+
+
+2022-04-29 14:24:28,035: - Tile 21:
+2022-04-29 14:24:28,035: - 	Remaining Targets: 128
+2022-04-29 14:24:30,956: - 	Tile contains 11 galaxies, of which 0 are repeats
+2022-04-29 14:24:30,956: - FINISHED TILE 21
+
+
+2022-04-29 14:24:30,983: - Tile 22:
+2022-04-29 14:24:31,012: - 	Remaining Targets: 117
+2022-04-29 14:24:34,100: - 	Tile contains 15 galaxies, of which 4 are repeats
+2022-04-29 14:24:34,100: - FINISHED TILE 22
+
+
+2022-04-29 14:24:34,128: - Tile 23:
+2022-04-29 14:24:34,128: - 	Remaining Targets: 106
+2022-04-29 14:24:36,930: - 	Tile contains 19 galaxies, of which 10 are repeats
+2022-04-29 14:24:36,930: - FINISHED TILE 23
+
+
+2022-04-29 14:24:36,960: - Tile 24:
+2022-04-29 14:24:36,960: - 	Remaining Targets: 97
+2022-04-29 14:24:39,854: - 	Tile contains 19 galaxies, of which 10 are repeats
+2022-04-29 14:24:39,855: - FINISHED TILE 24
+
+
+2022-04-29 14:24:39,884: - Tile 25:
+2022-04-29 14:24:39,884: - 	Remaining Targets: 88
+2022-04-29 14:24:42,761: - 	Tile contains 19 galaxies, of which 10 are repeats
+2022-04-29 14:24:42,761: - FINISHED TILE 25
+
+
+2022-04-29 14:24:42,794: - Tile 26:
+2022-04-29 14:24:42,794: - 	Remaining Targets: 79
+2022-04-29 14:24:45,285: - 	Tile contains 19 galaxies, of which 11 are repeats
+2022-04-29 14:24:45,285: - FINISHED TILE 26
+
+
+2022-04-29 14:24:45,314: - Tile 27:
+2022-04-29 14:24:45,314: - 	Remaining Targets: 71
+2022-04-29 14:24:47,686: - 	Tile contains 17 galaxies, of which 10 are repeats
+2022-04-29 14:24:47,687: - FINISHED TILE 27
+
+
+2022-04-29 14:24:47,717: - Tile 28:
+2022-04-29 14:24:47,717: - 	Remaining Targets: 64
+2022-04-29 14:24:50,376: - 	Tile contains 19 galaxies, of which 13 are repeats
+2022-04-29 14:24:50,376: - FINISHED TILE 28
+
+
+2022-04-29 14:24:50,407: - Tile 29:
+2022-04-29 14:24:50,408: - 	Remaining Targets: 58
+2022-04-29 14:24:53,191: - 	Tile contains 12 galaxies, of which 6 are repeats
+2022-04-29 14:24:53,191: - FINISHED TILE 29
+
+
+2022-04-29 14:24:53,223: - Tile 30:
+2022-04-29 14:24:53,223: - 	Remaining Targets: 52
+2022-04-29 14:24:55,727: - 	Tile contains 10 galaxies, of which 5 are repeats
+2022-04-29 14:24:55,727: - FINISHED TILE 30
+
+
+2022-04-29 14:24:55,758: - Tile 31:
+2022-04-29 14:24:55,758: - 	Remaining Targets: 47
+2022-04-29 14:24:58,857: - 	Tile contains 12 galaxies, of which 7 are repeats
+2022-04-29 14:24:58,857: - FINISHED TILE 31
+
+
+2022-04-29 14:24:58,890: - Tile 32:
+2022-04-29 14:24:58,890: - 	Remaining Targets: 42
+2022-04-29 14:25:02,012: - 	Tile contains 17 galaxies, of which 12 are repeats
+2022-04-29 14:25:02,012: - FINISHED TILE 32
+
+
+2022-04-29 14:25:02,044: - Tile 33:
+2022-04-29 14:25:02,044: - 	Remaining Targets: 37
+2022-04-29 14:25:04,408: - 	Tile contains 13 galaxies, of which 9 are repeats
+2022-04-29 14:25:04,409: - FINISHED TILE 33
+
+
+2022-04-29 14:25:04,440: - Tile 34:
+2022-04-29 14:25:04,440: - 	Remaining Targets: 33
+2022-04-29 14:25:07,596: - 	Tile contains 12 galaxies, of which 8 are repeats
+2022-04-29 14:25:07,596: - FINISHED TILE 34
+
+
+2022-04-29 14:25:07,630: - Tile 35:
+2022-04-29 14:25:07,630: - 	Remaining Targets: 29
+2022-04-29 14:25:10,366: - 	Tile contains 19 galaxies, of which 16 are repeats
+2022-04-29 14:25:10,366: - FINISHED TILE 35
+
+
+2022-04-29 14:25:10,398: - Tile 36:
+2022-04-29 14:25:10,403: - 	Remaining Targets: 26
+2022-04-29 14:25:13,266: - 	Tile contains 17 galaxies, of which 13 are repeats
+2022-04-29 14:25:13,267: - FINISHED TILE 36
+
+
+2022-04-29 14:25:13,300: - Tile 37:
+2022-04-29 14:25:13,300: - 	Remaining Targets: 22
+2022-04-29 14:25:16,267: - 	Tile contains 4 galaxies, of which 0 are repeats
+2022-04-29 14:25:16,267: - FINISHED TILE 37
+
+
+2022-04-29 14:25:16,302: - Tile 38:
+2022-04-29 14:25:16,302: - 	Remaining Targets: 18
+2022-04-29 14:25:18,606: - 	Tile contains 13 galaxies, of which 10 are repeats
+2022-04-29 14:25:18,606: - FINISHED TILE 38
+
+
+2022-04-29 14:25:18,641: - Tile 39:
+2022-04-29 14:25:18,641: - 	Remaining Targets: 15
+2022-04-29 14:25:21,643: - 	Tile contains 11 galaxies, of which 8 are repeats
+2022-04-29 14:25:21,643: - FINISHED TILE 39
+
+
+2022-04-29 14:25:21,676: - Tile 40:
+2022-04-29 14:25:21,677: - 	Remaining Targets: 12
+2022-04-29 14:25:24,279: - 	Tile contains 10 galaxies, of which 8 are repeats
+2022-04-29 14:25:24,279: - FINISHED TILE 40
+
+
+2022-04-29 14:25:24,313: - Tile 41:
+2022-04-29 14:25:24,313: - 	Remaining Targets: 10
+2022-04-29 14:25:26,924: - 	Tile contains 14 galaxies, of which 12 are repeats
+2022-04-29 14:25:26,925: - FINISHED TILE 41
+
+
+2022-04-29 14:25:26,960: - Tile 42:
+2022-04-29 14:25:26,960: - 	Remaining Targets: 8
+2022-04-29 14:25:30,006: - 	Tile contains 5 galaxies, of which 4 are repeats
+2022-04-29 14:25:30,006: - FINISHED TILE 42
+
+
+2022-04-29 14:25:30,042: - Tile 43:
+2022-04-29 14:25:30,042: - 	Remaining Targets: 7
+2022-04-29 14:25:33,101: - 	Tile contains 13 galaxies, of which 12 are repeats
+2022-04-29 14:25:33,102: - FINISHED TILE 43
+
+
+2022-04-29 14:25:33,137: - Tile 44:
+2022-04-29 14:25:33,138: - 	Remaining Targets: 6
+2022-04-29 14:25:35,997: - 	Tile contains 1 galaxies, of which 0 are repeats
+2022-04-29 14:25:35,997: - FINISHED TILE 44
+
+
+2022-04-29 14:25:36,035: - Tile 45:
+2022-04-29 14:25:36,035: - 	Remaining Targets: 5
+2022-04-29 14:25:39,057: - 	Tile contains 7 galaxies, of which 6 are repeats
+2022-04-29 14:25:39,058: - FINISHED TILE 45
+
+
+2022-04-29 14:25:39,094: - Tile 46:
+2022-04-29 14:25:39,094: - 	Remaining Targets: 4
+2022-04-29 14:25:42,208: - 	Tile contains 7 galaxies, of which 6 are repeats
+2022-04-29 14:25:42,208: - FINISHED TILE 46
+
+
+2022-04-29 14:25:42,247: - Tile 47:
+2022-04-29 14:25:42,248: - 	Remaining Targets: 3
+2022-04-29 14:25:45,418: - 	Tile contains 13 galaxies, of which 12 are repeats
+2022-04-29 14:25:45,418: - FINISHED TILE 47
+
+
+2022-04-29 14:25:45,454: - Tile 48:
+2022-04-29 14:25:45,454: - 	Remaining Targets: 2
+2022-04-29 14:25:48,986: - 	Tile contains 19 galaxies, of which 18 are repeats
+2022-04-29 14:25:48,986: - FINISHED TILE 48
+
+
+2022-04-29 14:25:49,024: - Tile 49:
+2022-04-29 14:25:49,024: - 	Remaining Targets: 1
+2022-04-29 14:25:52,750: - 	Tile contains 9 galaxies, of which 8 are repeats
+2022-04-29 14:25:52,750: - FINISHED TILE 49
+
+
+2022-04-29 14:25:52,788: - 
+
+
+2022-04-29 14:25:52,788: - Done!

@@ -1,0 +1,334 @@
+2021-11-24 13:32:42,687: - Robot Temperature: 19 C, Obs Temperature: 8 C. date=2021 12 06
+
+
+2021-11-24 13:32:42,690: - Adding extra columns to the target dataframe
+2021-11-24 13:32:42,693: - Total Targets in field to tile: 683
+
+2021-11-24 13:32:42,693: - Tile 0:
+2021-11-24 13:32:42,693: - 	Remaining Targets: 683
+2021-11-24 13:32:43,439: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_000.fld...
+2021-11-24 13:32:43,448: - FINISHED TILE 0
+
+
+2021-11-24 13:32:43,471: - Tile 1:
+2021-11-24 13:32:43,471: - 	Remaining Targets: 663
+2021-11-24 13:32:44,084: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_001.fld...
+2021-11-24 13:32:44,089: - FINISHED TILE 1
+
+
+2021-11-24 13:32:44,112: - Tile 2:
+2021-11-24 13:32:44,112: - 	Remaining Targets: 643
+2021-11-24 13:32:44,773: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_002.fld...
+2021-11-24 13:32:44,779: - FINISHED TILE 2
+
+
+2021-11-24 13:32:44,803: - Tile 3:
+2021-11-24 13:32:44,803: - 	Remaining Targets: 624
+2021-11-24 13:32:45,397: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_003.fld...
+2021-11-24 13:32:45,402: - FINISHED TILE 3
+
+
+2021-11-24 13:32:45,426: - Tile 4:
+2021-11-24 13:32:45,426: - 	Remaining Targets: 605
+2021-11-24 13:32:46,012: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_004.fld...
+2021-11-24 13:32:46,017: - FINISHED TILE 4
+
+
+2021-11-24 13:32:46,041: - Tile 5:
+2021-11-24 13:32:46,042: - 	Remaining Targets: 586
+2021-11-24 13:32:46,634: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_005.fld...
+2021-11-24 13:32:46,639: - FINISHED TILE 5
+
+
+2021-11-24 13:32:46,664: - Tile 6:
+2021-11-24 13:32:46,664: - 	Remaining Targets: 567
+2021-11-24 13:32:47,236: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_006.fld...
+2021-11-24 13:32:47,242: - FINISHED TILE 6
+
+
+2021-11-24 13:32:47,268: - Tile 7:
+2021-11-24 13:32:47,268: - 	Remaining Targets: 548
+2021-11-24 13:32:47,901: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_007.fld...
+2021-11-24 13:32:47,906: - FINISHED TILE 7
+
+
+2021-11-24 13:32:47,933: - Tile 8:
+2021-11-24 13:32:47,933: - 	Remaining Targets: 529
+2021-11-24 13:32:48,517: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_008.fld...
+2021-11-24 13:32:48,523: - FINISHED TILE 8
+
+
+2021-11-24 13:32:48,551: - Tile 9:
+2021-11-24 13:32:48,551: - 	Remaining Targets: 510
+2021-11-24 13:32:49,125: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_009.fld...
+2021-11-24 13:32:49,131: - FINISHED TILE 9
+
+
+2021-11-24 13:32:49,159: - Tile 10:
+2021-11-24 13:32:49,160: - 	Remaining Targets: 491
+2021-11-24 13:32:49,720: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_010.fld...
+2021-11-24 13:32:49,726: - FINISHED TILE 10
+
+
+2021-11-24 13:32:49,755: - Tile 11:
+2021-11-24 13:32:49,755: - 	Remaining Targets: 472
+2021-11-24 13:32:50,338: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_011.fld...
+2021-11-24 13:32:50,343: - FINISHED TILE 11
+
+
+2021-11-24 13:32:50,374: - Tile 12:
+2021-11-24 13:32:50,374: - 	Remaining Targets: 453
+2021-11-24 13:32:50,952: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_012.fld...
+2021-11-24 13:32:50,958: - FINISHED TILE 12
+
+
+2021-11-24 13:32:50,987: - Tile 13:
+2021-11-24 13:32:50,987: - 	Remaining Targets: 433
+2021-11-24 13:32:51,637: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_013.fld...
+2021-11-24 13:32:51,642: - FINISHED TILE 13
+
+
+2021-11-24 13:32:51,675: - Tile 14:
+2021-11-24 13:32:51,675: - 	Remaining Targets: 414
+2021-11-24 13:32:52,254: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_014.fld...
+2021-11-24 13:32:52,259: - FINISHED TILE 14
+
+
+2021-11-24 13:32:52,292: - Tile 15:
+2021-11-24 13:32:52,292: - 	Remaining Targets: 395
+2021-11-24 13:32:52,867: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_015.fld...
+2021-11-24 13:32:52,873: - FINISHED TILE 15
+
+
+2021-11-24 13:32:52,904: - Tile 16:
+2021-11-24 13:32:52,905: - 	Remaining Targets: 376
+2021-11-24 13:32:53,477: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_016.fld...
+2021-11-24 13:32:53,483: - FINISHED TILE 16
+
+
+2021-11-24 13:32:53,517: - Tile 17:
+2021-11-24 13:32:53,517: - 	Remaining Targets: 357
+2021-11-24 13:32:54,063: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_017.fld...
+2021-11-24 13:32:54,068: - FINISHED TILE 17
+
+
+2021-11-24 13:32:54,102: - Tile 18:
+2021-11-24 13:32:54,103: - 	Remaining Targets: 338
+2021-11-24 13:32:54,665: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_018.fld...
+2021-11-24 13:32:54,671: - FINISHED TILE 18
+
+
+2021-11-24 13:32:54,705: - Tile 19:
+2021-11-24 13:32:54,705: - 	Remaining Targets: 319
+2021-11-24 13:32:55,370: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_019.fld...
+2021-11-24 13:32:55,375: - FINISHED TILE 19
+
+
+2021-11-24 13:32:55,408: - Tile 20:
+2021-11-24 13:32:55,409: - 	Remaining Targets: 300
+2021-11-24 13:32:55,963: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_020.fld...
+2021-11-24 13:32:55,969: - FINISHED TILE 20
+
+
+2021-11-24 13:32:56,007: - Tile 21:
+2021-11-24 13:32:56,007: - 	Remaining Targets: 280
+2021-11-24 13:32:56,569: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_021.fld...
+2021-11-24 13:32:56,575: - FINISHED TILE 21
+
+
+2021-11-24 13:32:56,609: - Tile 22:
+2021-11-24 13:32:56,610: - 	Remaining Targets: 261
+2021-11-24 13:32:57,163: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_022.fld...
+2021-11-24 13:32:57,169: - FINISHED TILE 22
+
+
+2021-11-24 13:32:57,205: - Tile 23:
+2021-11-24 13:32:57,205: - 	Remaining Targets: 242
+2021-11-24 13:32:57,759: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_023.fld...
+2021-11-24 13:32:57,765: - FINISHED TILE 23
+
+
+2021-11-24 13:32:57,803: - Tile 24:
+2021-11-24 13:32:57,803: - 	Remaining Targets: 223
+2021-11-24 13:32:58,353: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_024.fld...
+2021-11-24 13:32:58,359: - FINISHED TILE 24
+
+
+2021-11-24 13:32:58,397: - Tile 25:
+2021-11-24 13:32:58,397: - 	Remaining Targets: 206
+2021-11-24 13:32:58,956: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_025.fld...
+2021-11-24 13:32:58,961: - FINISHED TILE 25
+
+
+2021-11-24 13:32:59,000: - Tile 26:
+2021-11-24 13:32:59,000: - 	Remaining Targets: 189
+2021-11-24 13:32:59,555: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_026.fld...
+2021-11-24 13:32:59,560: - FINISHED TILE 26
+
+
+2021-11-24 13:32:59,599: - Tile 27:
+2021-11-24 13:32:59,599: - 	Remaining Targets: 173
+2021-11-24 13:33:00,378: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_027.fld...
+2021-11-24 13:33:00,384: - FINISHED TILE 27
+
+
+2021-11-24 13:33:00,428: - Tile 28:
+2021-11-24 13:33:00,428: - 	Remaining Targets: 159
+2021-11-24 13:33:01,012: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_028.fld...
+2021-11-24 13:33:01,018: - FINISHED TILE 28
+
+
+2021-11-24 13:33:01,059: - Tile 29:
+2021-11-24 13:33:01,059: - 	Remaining Targets: 146
+2021-11-24 13:33:01,631: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_029.fld...
+2021-11-24 13:33:01,637: - FINISHED TILE 29
+
+
+2021-11-24 13:33:01,677: - Tile 30:
+2021-11-24 13:33:01,677: - 	Remaining Targets: 132
+2021-11-24 13:33:02,253: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_030.fld...
+2021-11-24 13:33:02,258: - FINISHED TILE 30
+
+
+2021-11-24 13:33:02,299: - Tile 31:
+2021-11-24 13:33:02,299: - 	Remaining Targets: 119
+2021-11-24 13:33:03,029: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_031.fld...
+2021-11-24 13:33:03,035: - FINISHED TILE 31
+
+
+2021-11-24 13:33:03,179: - Tile 32:
+2021-11-24 13:33:03,179: - 	Remaining Targets: 106
+2021-11-24 13:33:03,773: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_032.fld...
+2021-11-24 13:33:03,778: - FINISHED TILE 32
+
+
+2021-11-24 13:33:03,824: - Tile 33:
+2021-11-24 13:33:03,824: - 	Remaining Targets: 94
+2021-11-24 13:33:04,460: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_033.fld...
+2021-11-24 13:33:04,467: - FINISHED TILE 33
+
+
+2021-11-24 13:33:04,512: - Tile 34:
+2021-11-24 13:33:04,513: - 	Remaining Targets: 83
+2021-11-24 13:33:05,066: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_034.fld...
+2021-11-24 13:33:05,072: - FINISHED TILE 34
+
+
+2021-11-24 13:33:05,115: - Tile 35:
+2021-11-24 13:33:05,115: - 	Remaining Targets: 73
+2021-11-24 13:33:05,672: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_035.fld...
+2021-11-24 13:33:05,677: - FINISHED TILE 35
+
+
+2021-11-24 13:33:05,722: - Tile 36:
+2021-11-24 13:33:05,722: - 	Remaining Targets: 63
+2021-11-24 13:33:06,263: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_036.fld...
+2021-11-24 13:33:06,269: - FINISHED TILE 36
+
+
+2021-11-24 13:33:06,313: - Tile 37:
+2021-11-24 13:33:06,314: - 	Remaining Targets: 54
+2021-11-24 13:33:07,044: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_037.fld...
+2021-11-24 13:33:07,049: - FINISHED TILE 37
+
+
+2021-11-24 13:33:07,097: - Tile 38:
+2021-11-24 13:33:07,097: - 	Remaining Targets: 47
+2021-11-24 13:33:07,649: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_038.fld...
+2021-11-24 13:33:07,655: - FINISHED TILE 38
+
+
+2021-11-24 13:33:07,699: - Tile 39:
+2021-11-24 13:33:07,700: - 	Remaining Targets: 40
+2021-11-24 13:33:08,241: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_039.fld...
+2021-11-24 13:33:08,246: - FINISHED TILE 39
+
+
+2021-11-24 13:33:08,293: - Tile 40:
+2021-11-24 13:33:08,293: - 	Remaining Targets: 35
+2021-11-24 13:33:08,863: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_040.fld...
+2021-11-24 13:33:08,870: - FINISHED TILE 40
+
+
+2021-11-24 13:33:08,917: - Tile 41:
+2021-11-24 13:33:08,917: - 	Remaining Targets: 30
+2021-11-24 13:33:09,431: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_041.fld...
+2021-11-24 13:33:09,437: - FINISHED TILE 41
+
+
+2021-11-24 13:33:09,484: - Tile 42:
+2021-11-24 13:33:09,485: - 	Remaining Targets: 26
+2021-11-24 13:33:10,021: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_042.fld...
+2021-11-24 13:33:10,027: - FINISHED TILE 42
+
+
+2021-11-24 13:33:10,078: - Tile 43:
+2021-11-24 13:33:10,078: - 	Remaining Targets: 22
+2021-11-24 13:33:10,666: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_043.fld...
+2021-11-24 13:33:10,672: - FINISHED TILE 43
+
+
+2021-11-24 13:33:10,726: - Tile 44:
+2021-11-24 13:33:10,726: - 	Remaining Targets: 19
+2021-11-24 13:33:11,306: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_044.fld...
+2021-11-24 13:33:11,311: - FINISHED TILE 44
+
+
+2021-11-24 13:33:11,361: - Tile 45:
+2021-11-24 13:33:11,361: - 	Remaining Targets: 16
+2021-11-24 13:33:11,901: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_045.fld...
+2021-11-24 13:33:11,907: - FINISHED TILE 45
+
+
+2021-11-24 13:33:11,956: - Tile 46:
+2021-11-24 13:33:11,957: - 	Remaining Targets: 13
+2021-11-24 13:33:12,580: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_046.fld...
+2021-11-24 13:33:12,586: - FINISHED TILE 46
+
+
+2021-11-24 13:33:12,636: - Tile 47:
+2021-11-24 13:33:12,636: - 	Remaining Targets: 11
+2021-11-24 13:33:13,180: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_047.fld...
+2021-11-24 13:33:13,185: - FINISHED TILE 47
+
+
+2021-11-24 13:33:13,236: - Tile 48:
+2021-11-24 13:33:13,236: - 	Remaining Targets: 8
+2021-11-24 13:33:13,856: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_048.fld...
+2021-11-24 13:33:13,863: - FINISHED TILE 48
+
+
+2021-11-24 13:33:13,916: - Tile 49:
+2021-11-24 13:33:13,916: - 	Remaining Targets: 6
+2021-11-24 13:33:14,443: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_049.fld...
+2021-11-24 13:33:14,449: - FINISHED TILE 49
+
+
+2021-11-24 13:33:14,502: - Tile 50:
+2021-11-24 13:33:14,503: - 	Remaining Targets: 4
+2021-11-24 13:33:15,554: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_050.fld...
+2021-11-24 13:33:15,560: - FINISHED TILE 50
+
+
+2021-11-24 13:33:15,612: - Tile 51:
+2021-11-24 13:33:15,613: - 	Remaining Targets: 3
+2021-11-24 13:33:16,454: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_051.fld...
+2021-11-24 13:33:16,463: - FINISHED TILE 51
+
+
+2021-11-24 13:33:16,546: - Tile 52:
+2021-11-24 13:33:16,546: - 	Remaining Targets: 2
+2021-11-24 13:33:17,771: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_052.fld...
+2021-11-24 13:33:17,778: - FINISHED TILE 52
+
+
+2021-11-24 13:33:17,835: - Tile 53:
+2021-11-24 13:33:17,835: - 	Remaining Targets: 1
+2021-11-24 13:33:20,098: - 	Distortion-corrected tile saved at results/WAVES_South/H01/DistortionCorrected/DC_tile_053.fld...
+2021-11-24 13:33:20,104: - FINISHED TILE 53
+
+
+2021-11-24 13:33:20,162: - 
+
+
+2021-11-24 13:33:20,162: - Done!

@@ -1,0 +1,38 @@
+2022-01-07 12:27:32,508: - Robot Temperature: 12 C, Obs Temperature: 12 C. date=2022 01 15
+
+
+2022-01-07 12:27:32,510: - Adding extra columns to the target dataframe
+2022-01-07 12:27:32,540: - Total Targets in field to tile: 694
+
+2022-01-07 12:27:32,540: - Tile 0:
+2022-01-07 12:27:32,540: - 	Remaining Targets: 694
+2022-01-07 12:27:33,089: - FINISHED TILE 0
+
+
+2022-01-07 12:27:33,109: - Tile 1:
+2022-01-07 12:27:33,109: - 	Remaining Targets: 671
+2022-01-07 12:27:33,546: - FINISHED TILE 1
+
+
+2022-01-07 12:27:33,568: - Tile 2:
+2022-01-07 12:27:33,568: - 	Remaining Targets: 649
+2022-01-07 12:27:33,993: - FINISHED TILE 2
+
+
+2022-01-07 12:27:34,015: - Tile 3:
+2022-01-07 12:27:34,015: - 	Remaining Targets: 628
+2022-01-07 12:27:34,425: - FINISHED TILE 3
+
+
+2022-01-07 12:27:34,447: - Tile 4:
+2022-01-07 12:27:34,447: - 	Remaining Targets: 608
+2022-01-07 12:27:34,863: - FINISHED TILE 4
+
+
+2022-01-07 12:27:34,886: - Tile 5:
+2022-01-07 12:27:34,886: - 	Remaining Targets: 585
+2022-01-07 12:27:35,302: - FINISHED TILE 5
+
+
+2022-01-07 12:27:35,329: - Tile 6:
+2022-01-07 12:27:35,329: - 	Remaining Targets: 564

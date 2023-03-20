@@ -1,0 +1,68 @@
+2022-04-29 14:12:20,817: - Robot Temperature: 12 C, Obs Temperature: 12 C. date=2022 01 15
+
+
+2022-04-29 14:12:20,841: - Adding extra columns to the target dataframe
+2022-04-29 14:12:20,873: - Total Targets in field to tile: 477
+
+2022-04-29 14:12:20,875: - Tile 0:
+2022-04-29 14:12:20,875: - 	Remaining Targets: 477
+2022-04-29 14:12:23,625: - 	Tile contains 19 galaxies, of which 0 are repeats
+2022-04-29 14:12:23,625: - FINISHED TILE 0
+
+
+2022-04-29 14:12:23,639: - Tile 1:
+2022-04-29 14:12:23,639: - 	Remaining Targets: 457
+2022-04-29 14:12:26,772: - 	Tile contains 19 galaxies, of which 0 are repeats
+2022-04-29 14:12:26,772: - FINISHED TILE 1
+
+
+2022-04-29 14:12:26,788: - Tile 2:
+2022-04-29 14:12:26,788: - 	Remaining Targets: 437
+2022-04-29 14:12:30,095: - 	Tile contains 19 galaxies, of which 0 are repeats
+2022-04-29 14:12:30,096: - FINISHED TILE 2
+
+
+2022-04-29 14:12:30,113: - Tile 3:
+2022-04-29 14:12:30,113: - 	Remaining Targets: 418
+2022-04-29 14:12:32,588: - 	Tile contains 19 galaxies, of which 0 are repeats
+2022-04-29 14:12:32,589: - FINISHED TILE 3
+
+
+2022-04-29 14:12:32,605: - Tile 4:
+2022-04-29 14:12:32,605: - 	Remaining Targets: 399
+2022-04-29 14:12:35,323: - 	Tile contains 19 galaxies, of which 0 are repeats
+2022-04-29 14:12:35,324: - FINISHED TILE 4
+
+
+2022-04-29 14:12:35,341: - Tile 5:
+2022-04-29 14:12:35,341: - 	Remaining Targets: 379
+2022-04-29 14:12:38,378: - 	Tile contains 19 galaxies, of which 0 are repeats
+2022-04-29 14:12:38,378: - FINISHED TILE 5
+
+
+2022-04-29 14:12:38,398: - Tile 6:
+2022-04-29 14:12:38,398: - 	Remaining Targets: 360
+2022-04-29 14:12:41,912: - 	Tile contains 19 galaxies, of which 0 are repeats
+2022-04-29 14:12:41,912: - FINISHED TILE 6
+
+
+2022-04-29 14:12:41,931: - Tile 7:
+2022-04-29 14:12:41,931: - 	Remaining Targets: 341
+2022-04-29 14:12:44,934: - 	Tile contains 19 galaxies, of which 0 are repeats
+2022-04-29 14:12:44,935: - FINISHED TILE 7
+
+
+2022-04-29 14:12:44,960: - Tile 8:
+2022-04-29 14:12:44,960: - 	Remaining Targets: 322
+2022-04-29 14:12:48,299: - 	Tile contains 19 galaxies, of which 0 are repeats
+2022-04-29 14:12:48,299: - FINISHED TILE 8
+
+
+2022-04-29 14:12:48,320: - Tile 9:
+2022-04-29 14:12:48,320: - 	Remaining Targets: 303
+2022-04-29 14:12:51,671: - 	Tile contains 19 galaxies, of which 0 are repeats
+2022-04-29 14:12:51,671: - FINISHED TILE 9
+
+
+2022-04-29 14:12:51,692: - Tile 10:
+2022-04-29 14:12:51,692: - 	Remaining Targets: 284

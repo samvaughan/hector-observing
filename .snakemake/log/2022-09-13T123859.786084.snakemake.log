@@ -1,0 +1,67 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                   count    min threads    max threads
+------------------  -------  -------------  -------------
+all                       1              1              1
+allocate_tile             1              1              1
+check_tile                1              1              1
+collect_outputs           1              1              1
+get_galaxy_cutouts        1              1              1
+update_header             1              1              1
+total                     6              1              1
+
+Select jobs to execute...
+
+[Tue Sep 13 12:39:00 2022]
+Job 74: Fixing the file headers
+
+[Tue Sep 13 12:39:02 2022]
+Finished job 74.
+1 of 6 steps (17%) done
+Select jobs to execute...
+
+[Tue Sep 13 12:39:02 2022]
+Job 73: Allocating the Hexabundles
+
+[Tue Sep 13 12:39:13 2022]
+Finished job 73.
+2 of 6 steps (33%) done
+Select jobs to execute...
+
+[Tue Sep 13 12:39:14 2022]
+Job 95: Downloading the cutouts
+
+[Tue Sep 13 12:47:28 2022]
+Finished job 95.
+3 of 6 steps (50%) done
+Select jobs to execute...
+
+[Tue Sep 13 12:47:29 2022]
+Job 114: Checking the final files
+
+[Tue Sep 13 12:47:30 2022]
+Finished job 114.
+4 of 6 steps (67%) done
+Select jobs to execute...
+
+[Tue Sep 13 12:47:30 2022]
+Job 133: Collecting the outputs into a nice format
+
+[Tue Sep 13 12:47:31 2022]
+Finished job 133.
+5 of 6 steps (83%) done
+Select jobs to execute...
+
+[Tue Sep 13 12:47:31 2022]
+localrule all:
+    input: results/20220914/TilingOutputs/H01/FinalOutputs/H01_tile_000_finished.flag, results/20220914/TilingOutputs/H01/FinalOutputs/H01_tile_003_finished.flag, results/20220914/TilingOutputs/H01/FinalOutputs/H01_tile_004_finished.flag, results/20220914/TilingOutputs/H01/FinalOutputs/H01_tile_005_finished.flag, results/20220914/TilingOutputs/H03/FinalOutputs/H03_tile_001_finished.flag, results/20220914/TilingOutputs/H03/FinalOutputs/H03_tile_002_finished.flag, results/20220914/TilingOutputs/H03/FinalOutputs/H03_tile_003_finished.flag, results/20220914/TilingOutputs/H03/FinalOutputs/H03_tile_004_finished.flag, results/20220914/TilingOutputs/H01_guide_centre/FinalOutputs/H01_guide_centre_tile_001_finished.flag, results/20220914/TilingOutputs/H01_guide_centre/FinalOutputs/H01_guide_centre_tile_002_finished.flag, results/20220914/TilingOutputs/H01_guide_centre/FinalOutputs/H01_guide_centre_tile_003_finished.flag, results/20220914/TilingOutputs/H01_guide_centre/FinalOutputs/H01_guide_centre_tile_004_finished.flag, results/20220914/TilingOutputs/H01_guide_centre/FinalOutputs/H01_guide_centre_tile_005_finished.flag, results/20220914/TilingOutputs/H03_guide_centre/FinalOutputs/H03_guide_centre_tile_001_finished.flag, results/20220914/TilingOutputs/H03_guide_centre/FinalOutputs/H03_guide_centre_tile_002_finished.flag, results/20220914/TilingOutputs/StarFields_Radial/FinalOutputs/StarFields_Radial_tile_001_finished.flag, results/20220914/TilingOutputs/StarFields_Radial/FinalOutputs/StarFields_Radial_tile_002_finished.flag, results/20220914/TilingOutputs/StarFields/FinalOutputs/StarFields_tile_001_finished.flag, results/20220914/TilingOutputs/StarFields/FinalOutputs/StarFields_tile_002_finished.flag, results/20220914/Cutouts/H01_tile_000/download_complete.flag, results/20220914/Cutouts/H01_tile_003/download_complete.flag, results/20220914/Cutouts/H01_tile_004/download_complete.flag, results/20220914/Cutouts/H01_tile_005/download_complete.flag, results/20220914/Cutouts/H03_tile_001/download_complete.flag, results/20220914/Cutouts/H03_tile_002/download_complete.flag, results/20220914/Cutouts/H03_tile_003/download_complete.flag, results/20220914/Cutouts/H03_tile_004/download_complete.flag, results/20220914/Cutouts/H01_guide_centre_tile_001/download_complete.flag, results/20220914/Cutouts/H01_guide_centre_tile_002/download_complete.flag, results/20220914/Cutouts/H01_guide_centre_tile_003/download_complete.flag, results/20220914/Cutouts/H01_guide_centre_tile_004/download_complete.flag, results/20220914/Cutouts/H01_guide_centre_tile_005/download_complete.flag, results/20220914/Cutouts/H03_guide_centre_tile_001/download_complete.flag, results/20220914/Cutouts/H03_guide_centre_tile_002/download_complete.flag, results/20220914/Cutouts/StarFields_Radial_tile_001/download_complete.flag, results/20220914/Cutouts/StarFields_Radial_tile_002/download_complete.flag, results/20220914/Cutouts/StarFields_tile_001/download_complete.flag, results/20220914/Cutouts/StarFields_tile_002/download_complete.flag, results/20220914/FileChecks/H01/H01_tile_000_checked.flag, results/20220914/FileChecks/H01/H01_tile_003_checked.flag, results/20220914/FileChecks/H01/H01_tile_004_checked.flag, results/20220914/FileChecks/H01/H01_tile_005_checked.flag, results/20220914/FileChecks/H03/H03_tile_001_checked.flag, results/20220914/FileChecks/H03/H03_tile_002_checked.flag, results/20220914/FileChecks/H03/H03_tile_003_checked.flag, results/20220914/FileChecks/H03/H03_tile_004_checked.flag, results/20220914/FileChecks/H01_guide_centre/H01_guide_centre_tile_001_checked.flag, results/20220914/FileChecks/H01_guide_centre/H01_guide_centre_tile_002_checked.flag, results/20220914/FileChecks/H01_guide_centre/H01_guide_centre_tile_003_checked.flag, results/20220914/FileChecks/H01_guide_centre/H01_guide_centre_tile_004_checked.flag, results/20220914/FileChecks/H01_guide_centre/H01_guide_centre_tile_005_checked.flag, results/20220914/FileChecks/H03_guide_centre/H03_guide_centre_tile_001_checked.flag, results/20220914/FileChecks/H03_guide_centre/H03_guide_centre_tile_002_checked.flag, results/20220914/FileChecks/StarFields_Radial/StarFields_Radial_tile_001_checked.flag, results/20220914/FileChecks/StarFields_Radial/StarFields_Radial_tile_002_checked.flag, results/20220914/FileChecks/StarFields/StarFields_tile_001_checked.flag, results/20220914/FileChecks/StarFields/StarFields_tile_002_checked.flag, results/20220914/Upload/H01_tile_000.tar.gz, results/20220914/Upload/H01_tile_003.tar.gz, results/20220914/Upload/H01_tile_004.tar.gz, results/20220914/Upload/H01_tile_005.tar.gz, results/20220914/Upload/H03_tile_001.tar.gz, results/20220914/Upload/H03_tile_002.tar.gz, results/20220914/Upload/H03_tile_003.tar.gz, results/20220914/Upload/H03_tile_004.tar.gz, results/20220914/Upload/H01_guide_centre_tile_001.tar.gz, results/20220914/Upload/H01_guide_centre_tile_002.tar.gz, results/20220914/Upload/H01_guide_centre_tile_003.tar.gz, results/20220914/Upload/H01_guide_centre_tile_004.tar.gz, results/20220914/Upload/H01_guide_centre_tile_005.tar.gz, results/20220914/Upload/H03_guide_centre_tile_001.tar.gz, results/20220914/Upload/H03_guide_centre_tile_002.tar.gz, results/20220914/Upload/StarFields_Radial_tile_001.tar.gz, results/20220914/Upload/StarFields_Radial_tile_002.tar.gz, results/20220914/Upload/StarFields_tile_001.tar.gz, results/20220914/Upload/StarFields_tile_002.tar.gz, results/20220914/FileChecks/H01/H01_tile_000_checked.flag, results/20220914/FileChecks/H01/H01_tile_003_checked.flag, results/20220914/FileChecks/H01/H01_tile_004_checked.flag, results/20220914/FileChecks/H01/H01_tile_005_checked.flag, results/20220914/FileChecks/H03/H03_tile_001_checked.flag, results/20220914/FileChecks/H03/H03_tile_002_checked.flag, results/20220914/FileChecks/H03/H03_tile_003_checked.flag, results/20220914/FileChecks/H03/H03_tile_004_checked.flag, results/20220914/FileChecks/H01_guide_centre/H01_guide_centre_tile_001_checked.flag, results/20220914/FileChecks/H01_guide_centre/H01_guide_centre_tile_002_checked.flag, results/20220914/FileChecks/H01_guide_centre/H01_guide_centre_tile_003_checked.flag, results/20220914/FileChecks/H01_guide_centre/H01_guide_centre_tile_004_checked.flag, results/20220914/FileChecks/H01_guide_centre/H01_guide_centre_tile_005_checked.flag, results/20220914/FileChecks/H03_guide_centre/H03_guide_centre_tile_001_checked.flag, results/20220914/FileChecks/H03_guide_centre/H03_guide_centre_tile_002_checked.flag, results/20220914/FileChecks/StarFields_Radial/StarFields_Radial_tile_001_checked.flag, results/20220914/FileChecks/StarFields_Radial/StarFields_Radial_tile_002_checked.flag, results/20220914/FileChecks/StarFields/StarFields_tile_001_checked.flag, results/20220914/FileChecks/StarFields/StarFields_tile_002_checked.flag
+    jobid: 0
+    resources: tmpdir=/var/folders/bd/ym7_px1s7_53zt92h0rfdb000000gp/T
+
+[Tue Sep 13 12:47:31 2022]
+Finished job 0.
+6 of 6 steps (100%) done
+Complete log: /Users/samvaughan/Science/Hector/Observing/.snakemake/log/2022-09-13T123859.786084.snakemake.log

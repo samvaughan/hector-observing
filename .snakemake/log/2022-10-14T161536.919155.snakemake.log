@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in line 34 of /Users/samvaughan/Science/Hector/Observing/workflow/Snakefile:
+Missing input files for rule run_distortion_correction_code:
+resources/20221019/H01/Tiles/tile_001.fld
+resources/20221019/H01/Tiles/guide_tile_001.fld
