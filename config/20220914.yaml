@@ -1,15 +1,15 @@
 # Master output folder
-folder : 20220914
+folder: 20220914
 
 # Name of the table with the tile we're going to run on
-tiles_table : "resources/20220914/20220914_tiles.csv"
+tiles_table: "resources/20220914/20220914_tiles.csv"
 
-# Loacation of sky files for distortion correction code
-skyfiles_location : "/Volumes/OtherFiles/Science/Hector/SegMaps_Hector/"
+# Location of sky files for distortion correction code
+skyfiles_location: "/Volumes/OtherFiles/Science/Hector/SegMaps_Hector/"
 
-obs_date : "2022 09 20"
-robot_temp : 14
-obs_temp : 14
+obs_date: "2022 09 20"
+robot_temp: 14
+obs_temp: 14
 
-Hector_Linear_location : "/Users/samvaughan/Science/Hector/HectorObservationPipeline/hop/distortion_correction/HectorTranslationSoftware/DataFiles/April2022_Pos/HectorLinear.sds"
-Hector_Distortion_Location : "/Users/samvaughan/Science/Hector/HectorObservationPipeline/hop/distortion_correction/HectorTranslationSoftware/DataFiles/April2022_Pos/HectorDistortion.sds"
+Hector_Linear_location: "/Users/samvaughan/Science/Hector/HectorObservationPipeline/hop/distortion_correction/HectorTranslationSoftware/DataFiles/April2022_Pos/HectorLinear.sds"
+Hector_Distortion_Location: "/Users/samvaughan/Science/Hector/HectorObservationPipeline/hop/distortion_correction/HectorTranslationSoftware/DataFiles/April2022_Pos/HectorDistortion.sds"

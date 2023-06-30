@@ -1,8 +1,0 @@
-ValueError in line 18 of /Users/samvaughan/Science/Hector/Observing/workflow/Snakefile:
-'=' alignment not allowed in string format specifier
-  File "/Users/samvaughan/Science/Hector/Observing/workflow/Snakefile", line 18, in <module>
-  File "/opt/anaconda3/envs/snakemake/lib/python3.9/site-packages/pandas/core/series.py", line 4433, in apply
-  File "/opt/anaconda3/envs/snakemake/lib/python3.9/site-packages/pandas/core/apply.py", line 1088, in apply
-  File "/opt/anaconda3/envs/snakemake/lib/python3.9/site-packages/pandas/core/apply.py", line 1143, in apply_standard
-  File "pandas/_libs/lib.pyx", line 2870, in pandas._libs.lib.map_infer
-  File "/Users/samvaughan/Science/Hector/Observing/workflow/Snakefile", line 18, in <lambda>

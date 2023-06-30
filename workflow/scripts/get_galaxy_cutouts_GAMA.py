@@ -5,6 +5,7 @@ from tqdm import tqdm
 from astropy.io import fits
 from astropy.visualization import make_lupton_rgb
 from astropy.wcs import WCS
+import pandas as pd
 
 df = pd.read_csv(snakemake.input.tile_file, skiprows=11)
 
@@ -29,7 +30,7 @@ for index, row in tqdm(df.iterrows(), total=len(df)):
         folder = base_folder / "Hexabundles"
 
     folder.mkdir(exist_ok=True)
-    radius = 100/60/60
+    radius = 100 / 60 / 60
     url = f"https://datacentral.org.au/vo/sia2/query?FORMAT=fits&POS=CIRCLE {ra} {dec} {radius:.4f}"
 
     #filename to store the results of the query

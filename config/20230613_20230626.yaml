@@ -1,0 +1,29 @@
+# Master output folder
+folder: "20230613_20230626"
+
+# Name of the table with the tile we're going to run on
+tiles_table: "resources/20230613_20230626/20230613_20230626_galaxy_tiles.csv"
+
+# Location of sky files for distortion correction code
+skyfiles_location: "/Volumes/OtherFiles/Science/Hector/SegMaps_Hector/"
+
+obs_date: "2023 06 20"
+robot_temp: 14
+obs_temp: 14
+
+Hector_Linear_location: "/Users/samvaughan/Science/Hector/HectorObservationPipeline/hop/distortion_correction/HectorTranslationSoftware/DataFiles/April2022_Pos/HectorLinear.sds"
+Hector_Distortion_Location: "/Users/samvaughan/Science/Hector/HectorObservationPipeline/hop/distortion_correction/HectorTranslationSoftware/DataFiles/April2022_Pos/HectorDistortion.sds"
+
+wildcard_constraints:
+  field:
+    [
+      "G15",
+      "G23",
+      "A3716",
+      "A3667",
+      "StarFields",
+      "Commissioning_SAMI_low_mass",
+      "Commissioning_SAMI_MANGA_overlap",
+    ]
+
+P_and_Q_offset_filename: "/Users/samvaughan/Science/Hector/HectorObservationPipeline/hop/hexabundle_allocation/Hexa_PQ_table_with_guide_offsets_MEASURED_P.xlsx"

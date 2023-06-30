@@ -11,13 +11,12 @@ base_folder = Path(snakemake.params.output_folder)
 base_folder.mkdir(exist_ok=True)
 
 for index, row in tqdm(df.iterrows(), total=len(df)):
-
     ra = row.RA
     dec = row.DEC
     name = str(row.Hexabundle)
     CATID = row.ID
 
-    if name == 'nan':
+    if name == "nan":
         name = row.ID
 
     if "Sky" in name:
@@ -34,8 +33,8 @@ for index, row in tqdm(df.iterrows(), total=len(df)):
     else:
         url = f"https://www.legacysurvey.org/viewer/jpeg-cutout?ra={ra:.5f}&dec={dec:.5f}&layer=decals-dr7&pixscale=0.27&bands=grz&size=20"
     img_data = requests.get(url).content
-    with open(f'{folder}/{name}.jpg', 'wb') as handler:
+    with open(f"{folder}/{name}.jpg", "wb") as handler:
         handler.write(img_data)
-    #print(f"wget --read-timeout=5 -O  https://www.legacysurvey.org/viewer/jpeg-cutout?ra={ra:.5f}&dec={dec:.5f}&zoom=14&layer=ls-dr9")
+    # print(f"wget --read-timeout=5 -O  https://www.legacysurvey.org/viewer/jpeg-cutout?ra={ra:.5f}&dec={dec:.5f}&zoom=14&layer=ls-dr9")
 
 Path(snakemake.output.finished_flag).touch()

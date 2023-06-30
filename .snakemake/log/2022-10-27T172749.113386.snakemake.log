@@ -1,3 +1,0 @@
-Building DAG of jobs...
-MissingRuleException:
-No rule to produce results/20221019/TilingOutputs/Stars/DistortionCorrected/DC_Stars_tile_001.csv (if you use input functions make sure that they don't raise unexpected exceptions).

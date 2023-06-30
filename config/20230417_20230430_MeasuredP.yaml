@@ -1,0 +1,20 @@
+# Master output folder
+folder: "20230417_20230430"
+
+# Name of the table with the tile we're going to run on
+tiles_table: "resources/20230417_20230430/20230417_20230430_stars.csv"
+
+# Location of sky files for distortion correction code
+skyfiles_location: "/Volumes/OtherFiles/Science/Hector/SegMaps_Hector/"
+
+obs_date: "2023 04 24"
+robot_temp: 14
+obs_temp: 14
+
+Hector_Linear_location: "/Users/samvaughan/Science/Hector/HectorObservationPipeline/hop/distortion_correction/HectorTranslationSoftware/DataFiles/April2022_Pos/HectorLinear.sds"
+Hector_Distortion_Location: "/Users/samvaughan/Science/Hector/HectorObservationPipeline/hop/distortion_correction/HectorTranslationSoftware/DataFiles/April2022_Pos/HectorDistortion.sds"
+
+wildcard_contraints:
+  field: ["G12", "G15", "Stars_180_m22", "Stars_250_m22"]
+
+P_and_Q_offset_filename: "/Users/samvaughan/Science/Hector/HectorObservationPipeline/hop/hexabundle_allocation/Hexa_PQ_table_with_guide_offsets_MEASURED_P.xlsx"

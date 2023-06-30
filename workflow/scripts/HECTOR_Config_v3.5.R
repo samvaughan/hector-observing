@@ -1168,6 +1168,8 @@ configure_stdstars <- function(pos, angs, cegs, stdpos){
   if (cs < nstdprobes) {
     print(paste('**Could only configure ',as.character(cs), ' standard stars in this field. Boo! :-('), sep='')
     stdflag='StdFail'
+    #* Added by Sam so we can catch when we error and when we just can't configure
+    quit(status=10)
   }
   print(list(pos=newpos,angs=newangs, cegs=newcegs, stdflag=stdflag))
   return(list(pos=newpos,angs=newangs,cegs=newcegs, stdflag=stdflag))

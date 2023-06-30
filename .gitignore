@@ -1,3 +1,4 @@
 *.fits
 *.fits.gz
 results/*
+.snakemake/*

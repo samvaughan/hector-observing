@@ -1,3 +1,0 @@
-KeyError in line 15 of /Users/samvaughan/Science/Hector/Observing/workflow/Snakefile:
-'folder'
-  File "/Users/samvaughan/Science/Hector/Observing/workflow/Snakefile", line 15, in <module>

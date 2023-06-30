@@ -1,7 +1,0 @@
-Building DAG of jobs...
-MissingInputException in line 25 of /Users/samvaughan/Science/Hector/Observing/workflow/Snakefile:
-Missing input files for rule all:
-results/20220914/FileChecks/A2399_guide_central/A2399_guide_central_tile_001_checked.flag
-results/20220914/Cutouts/A2399_guide_central_tile_001/download_complete.flag
-results/20220914/Upload/A2399_guide_central_tile_001.tar.gz
-results/20220914/TilingOutputs/A2399_guide_central/FinalOutputs/A2399_guide_central_tile_001_finished.flag

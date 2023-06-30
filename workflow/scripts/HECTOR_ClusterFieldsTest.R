@@ -2,32 +2,32 @@
 
 #* Added (above)
 
-##Test routine:
+## Test routine:
 
-#Install various R libraries the first time it is run. This only needs to be run once ever.:
-#install.packages('astro')
-#install.packages('astroFns')
-#install.packages('plotrix')
-#install.packages('raster')
-#install.packages('graphics')
-#install.packages('pracma')
-#install.packages('DescTools')
-#install.packages('PBSmapping')
-#install.packages('DEoptim')
-#install.packages('R.utils')
-#install.packages('rgeos')
+# Install various R libraries the first time it is run. This only needs to be run once ever.:
+# install.packages('astro')
+# install.packages('astroFns')
+# install.packages('plotrix')
+# install.packages('raster')
+# install.packages('graphics')
+# install.packages('pracma')
+# install.packages('DescTools')
+# install.packages('PBSmapping')
+# install.packages('DEoptim')
+# install.packages('R.utils')
+# install.packages('rgeos')
 
 
-#* Edits by Sam. I'll use a #* for my comments. 
+#* Edits by Sam. I'll use a #* for my comments.
 
 #* No longer need to set the working directory
-#Setting working directory:
+# Setting working directory:
 #* setwd('~/Science/Hector/Tiling/MAXI/Cluster_tests/HectorC1_tests_01/')
 
 #* Source the Hector Config file
-#source(paste(Sys.getenv('HECTOROBSPIPELINE_LOC'), "/configuration/HECTOR_Config_v3.2.R", sep='/'))
-#source("workflow/scripts/HECTOR_Config_v3.2.R")
-source(snakemake@input[['Hector_Rcode_file']])
+# source(paste(Sys.getenv('HECTOROBSPIPELINE_LOC'), "/configuration/HECTOR_Config_v3.2.R", sep='/'))
+# source("workflow/scripts/HECTOR_Config_v3.2.R")
+source(snakemake@input[["Hector_Rcode_file"]])
 
 # For plots to show up
 library(tcltk)
@@ -57,63 +57,63 @@ quartz()
 #* arguments you'd give on the command line.
 #* To compare to ipython: %run myscript a, b would become tmp_args=c('a', 'b')
 #* DON'T FORGET TO COMMENT OUT LINE 51 TO RUN AS A SCRIPT!!!
-#tmp_args=c('/Users/samvaughan/Science/Hector/Targets/Commissioning/HandMade/results/TilingOutputs/120_m22/DistortionCorrected/DC_tile_120_m22_hexas_central.csv',
-           # '/Users/samvaughan/Science/Hector/Targets/Commissioning/HandMade/results/TilingOutputs/120_m22/DistortionCorrected/guide_DC_tile_120_m22_hexas_central.csv',
-           #   '/Users/samvaughan/Science/Hector/Targets/Commissioning/HandMade/results/TilingOutputs/120_m22/Configuration/Hexas_tile_120_m22_hexas_central_CONFIGURED.csv',
-           # '/Users/samvaughan/Science/Hector/Targets/Commissioning/HandMade/results/TilingOutputs/120_m22/Configuration/Guides_tile_120_m22_hexas_central_CONFIGURED.csv',
-           #   '--plot_filename', '/Users/samvaughan/Science/Hector/Targets/Commissioning/HandMade/results/TilingOutputs/120_m22/Plots/120_m22_hexas_central.pdf',
-           #   '--plot', '--run_local')
+# tmp_args=c('/Users/samvaughan/Science/Hector/Targets/Commissioning/HandMade/results/TilingOutputs/120_m22/DistortionCorrected/DC_tile_120_m22_hexas_central.csv',
+# '/Users/samvaughan/Science/Hector/Targets/Commissioning/HandMade/results/TilingOutputs/120_m22/DistortionCorrected/guide_DC_tile_120_m22_hexas_central.csv',
+#   '/Users/samvaughan/Science/Hector/Targets/Commissioning/HandMade/results/TilingOutputs/120_m22/Configuration/Hexas_tile_120_m22_hexas_central_CONFIGURED.csv',
+# '/Users/samvaughan/Science/Hector/Targets/Commissioning/HandMade/results/TilingOutputs/120_m22/Configuration/Guides_tile_120_m22_hexas_central_CONFIGURED.csv',
+#   '--plot_filename', '/Users/samvaughan/Science/Hector/Targets/Commissioning/HandMade/results/TilingOutputs/120_m22/Plots/120_m22_hexas_central.pdf',
+#   '--plot', '--run_local')
 
-#args <- parser$parse_args(tmp_args)
-#args <- parser$parse_args()
-
-
+# args <- parser$parse_args(tmp_args)
+# args <- parser$parse_args()
 
 
-#* Get the targets. 
-tile_filename = snakemake@input[['DC_corr_file']]
-guide_filename = snakemake@input[['DC_corr_guide_file']]
-plot = TRUE
-galaxy_out_name = snakemake@output[['configured_file']]
-guide_out_name = snakemake@output[['configured_guide_file']]
-plot_filename = snakemake@output[['plot_filename']]
-#FoV_size = args$FoV
 
 
-#Importing all functions (adjust path according to where HECTOR_Config_v?.?.R is located):
-#config_string = paste("/suphys/svau7351/Science/Hector/Tiling/Caros_Code/HECTOR_Config_v1.3.R", sep='')
-#source(config_string)
+#* Get the targets.
+tile_filename <- snakemake@input[["DC_corr_file"]]
+guide_filename <- snakemake@input[["DC_corr_guide_file"]]
+plot <- TRUE
+galaxy_out_name <- snakemake@output[["configured_file"]]
+guide_out_name <- snakemake@output[["configured_guide_file"]]
+plot_filename <- snakemake@output[["plot_filename"]]
+# FoV_size = args$FoV
 
 
-#To enable graphic visualisation, set the "visualise" object to TRUE:
+# Importing all functions (adjust path according to where HECTOR_Config_v?.?.R is located):
+# config_string = paste("/suphys/svau7351/Science/Hector/Tiling/Caros_Code/HECTOR_Config_v1.3.R", sep='')
+# source(config_string)
+
+
+# To enable graphic visualisation, set the "visualise" object to TRUE:
 visualise <<- plot
 
-itnconflicts=c()
-swapsneeded=c()
+itnconflicts <- c()
+swapsneeded <- c()
 
 #* Commented this out as we're now using files from the command line
-#Finding all fld files to configure:
-#fieldsfolder='Tiles/'
-#SAMIFields_Targets=list.files(path=fieldsfolder,pattern='Targets')
+# Finding all fld files to configure:
+# fieldsfolder='Tiles/'
+# SAMIFields_Targets=list.files(path=fieldsfolder,pattern='Targets')
 
 
 
-print(paste('********************************************'))
-print(paste('Configuring field ', tile_filename, sep=''))
-print(paste('********************************************'))
+print(paste("********************************************"))
+print(paste("Configuring field ", tile_filename, sep = ""))
+print(paste("********************************************"))
 
-#Reading in the field data (fd):
+# Reading in the field data (fd):
 #* Added explicit splitting into fieldsfolder, which is the stem of the filename
 #* And f, which the name of the file
 #* Also added a slash here, in the sep argument (was originally sep=' ')
 #* And changed the substr call below, as the name of the files is different to the original format
 
 
-tile_data=read.table(file=tile_filename, header=TRUE, sep=',', comment.char="#", check.names = TRUE, stringsAsFactors = FALSE)
+tile_data <- read.table(file = tile_filename, header = TRUE, sep = ",", comment.char = "#", check.names = TRUE, stringsAsFactors = FALSE)
 
-gdata=read.table(file=guide_filename, header=TRUE, comment.char="#", sep=',', check.names = TRUE, colClasses = c("ID"="character"))
+gdata <- read.table(file = guide_filename, header = TRUE, comment.char = "#", sep = ",", check.names = TRUE, colClasses = c("ID" = "character"))
 
-#gdata[,'type']=2
+# gdata[,'type']=2
 
 # #Reading in the field centre (ra, dec) from the fld file header (currently second line, i.e n=2):
 # fcentre=as.numeric(strsplit(readLines(paste(fieldsfolder,f, sep='/'), n=2)[2], split=' ')[[1]][c(2,3)])
@@ -124,136 +124,134 @@ gdata=read.table(file=guide_filename, header=TRUE, comment.char="#", sep=',', ch
 # tile_data[, 'fraction_plate_radius_Y'] = tile_data['MagnetY']/1000/(fov/2)
 
 # Peel off the sky fibres
-row_numbers = as.numeric(rownames(tile_data))
+row_numbers <- as.numeric(rownames(tile_data))
 # Find all rows which have "Sky" in their index
-sky_fibre_rows = grep("Sky", tile_data$ID)
-sky_fibre_IDs = tile_data[sky_fibre_rows, 'ID']
-not_sky_fibre_rows = row_numbers[!(row_numbers %in% sky_fibre_rows)]
-sky_fibre_data = tile_data[sky_fibre_rows,]
-#Combining guides and targets:
+sky_fibre_rows <- grep("Sky", tile_data$ID)
+sky_fibre_IDs <- tile_data[sky_fibre_rows, "ID"]
+not_sky_fibre_rows <- row_numbers[!(row_numbers %in% sky_fibre_rows)]
+sky_fibre_data <- tile_data[sky_fibre_rows, ]
+# Combining guides and targets:
 #* I've changed these column headings to match the outputs of my tiling code
-fdata=rbind(tile_data[not_sky_fibre_rows,c('ID','MagnetX','MagnetY','r_mag','type')],gdata[,c('ID','MagnetX','MagnetY','r_mag','type')])
+fdata <- rbind(tile_data[not_sky_fibre_rows, c("ID", "MagnetX", "MagnetY", "r_mag", "type")], gdata[, c("ID", "MagnetX", "MagnetY", "r_mag", "type")])
 
 # Converting coordinates into mm
 
-fdata[,'x'] = fdata[,'MagnetX'] / 1000.0 # * cos(fcentre$dec*pi/180.)
-fdata[,'y'] = fdata[,'MagnetY'] / 1000.0
+fdata[, "x"] <- fdata[, "MagnetX"] / 1000.0 # * cos(fcentre$dec*pi/180.)
+fdata[, "y"] <- fdata[, "MagnetY"] / 1000.0
 
-fdata[,'r'] = sqrt(fdata$x**2+fdata$y**2)
+fdata[, "r"] <- sqrt(fdata$x**2 + fdata$y**2)
 
-#Removing everything that is too far from the centre of the field.
-fdata=fdata[fdata[,'r']<fov/2-excl_radius,]
-if (nrow(fdata) < 19){
+# Removing everything that is too far from the centre of the field.
+fdata <- fdata[fdata[, "r"] < (fov) / 2 - excl_radius, ]
+if (nrow(fdata) < 19) {
   stop("We seem to have fewer than 19 galaxies!")
 }
 
 
-#Converting into input file for the configuration code.
-IDs=as.data.frame(fdata$ID)
-pos=as.data.frame(fdata[fdata[,'type']==1,c('x','y')])
-stdpos=as.data.frame(fdata[fdata[,'type']==0,c('x','y')])
-guidepos=as.data.frame(fdata[fdata[,'type']==2,c('x','y')])
-pos_master=list(pos=pos, stdpos=stdpos, guidepos=guidepos)
+# Converting into input file for the configuration code.
+IDs <- as.data.frame(fdata$ID)
+pos <- as.data.frame(fdata[fdata[, "type"] == 1, c("x", "y")])
+stdpos <- as.data.frame(fdata[fdata[, "type"] == 0, c("x", "y")])
+guidepos <- as.data.frame(fdata[fdata[, "type"] == 2, c("x", "y")])
+pos_master <- list(pos = pos, stdpos = stdpos, guidepos = guidepos)
 
 
-#Checking top 19 probes.
-draw_pos(x=pos_master$pos[c(1:19),'x'],y=pos_master$pos[c(1:19),'y'])
- 
+# Checking top 19 probes.
+draw_pos(x = pos_master$pos[c(1:19), "x"], y = pos_master$pos[c(1:19), "y"])
 
-#Configuring all HECTOR probes:
-final_config=configure_HECTOR(pos_master = pos_master) 
-pos=final_config$pos
-angs=final_config$angs
-gpos=final_config$gpos
-gangs=final_config$gangs
-rads=final_config$rads
-chosen_guides = final_config$guidenum
-grads=final_config$grads
-angs_azAng=final_config$angs_azAng
-gangs_gazAng=final_config$gangs_gazAng
-azAngs=final_config$azAngs
-gazAngs=final_config$gazAngs
-probes=defineprobe(x=pos[,'x'],y=pos[,'y'],angs=angs)
-conflicts=find_probe_conflicts(probes=probes, pos=pos, angs=angs)
-nconflicts=dim(conflicts)[1]
-print(paste('There were ', as.character(nconflicts), ' unresolvable conflicts in the field'))
-itnconflicts=c(itnconflicts,nconflicts)
-swapsneeded=c(swapsneeded,final_config$swaps)
+
+# Configuring all HECTOR probes:
+final_config <- configure_HECTOR(pos_master = pos_master)
+pos <- final_config$pos
+angs <- final_config$angs
+gpos <- final_config$gpos
+gangs <- final_config$gangs
+rads <- final_config$rads
+chosen_guides <- final_config$guidenum
+grads <- final_config$grads
+angs_azAng <- final_config$angs_azAng
+gangs_gazAng <- final_config$gangs_gazAng
+azAngs <- final_config$azAngs
+gazAngs <- final_config$gazAngs
+probes <- defineprobe(x = pos[, "x"], y = pos[, "y"], angs = angs)
+conflicts <- find_probe_conflicts(probes = probes, pos = pos, angs = angs)
+nconflicts <- dim(conflicts)[1]
+print(paste("There were ", as.character(nconflicts), " unresolvable conflicts in the field"))
+itnconflicts <- c(itnconflicts, nconflicts)
+swapsneeded <- c(swapsneeded, final_config$swaps)
 
 
 
 print("\n\nSaving with the updated method to avoid shuffling the star rows...\n\n")
 #* Get the IDs of things which have been tiled, and save these
 #* IDs=IDs[rownames(pos),] <<- This is wrong!
-ID=IDs[match(rownames(pos),rownames(fdata)),]
+ID <- IDs[match(rownames(pos), rownames(fdata)), ]
 # This gets the rest of the columns from the tile too for us to save
-subset_of_IDs_for_saving = (tile_data$ID %in% ID)
+subset_of_IDs_for_saving <- (tile_data$ID %in% ID)
 # Don't keep the ID column as otherwise this gets duplicated
-#selected_objects = tile_data[subset_of_IDs_for_saving, -which(names(tile_data) == "ID")]
-selected_objects = tile_data[subset_of_IDs_for_saving,]
+# selected_objects = tile_data[subset_of_IDs_for_saving, -which(names(tile_data) == "ID")]
+selected_objects <- tile_data[subset_of_IDs_for_saving, ]
 # Now make the skyfibre rows
-sky_fibre_data = tile_data[(tile_data$ID %in% sky_fibre_IDs),]
-sky_fibre_IDs = sky_fibre_data$ID
-sky_fibre_data_minus_IDs =  sky_fibre_data[, -which(names(sky_fibre_data) == "ID")]
-sky_fibre_filler_list = rep(-99, nrow(sky_fibre_data))
+sky_fibre_data <- tile_data[(tile_data$ID %in% sky_fibre_IDs), ]
+sky_fibre_IDs <- sky_fibre_data$ID
+sky_fibre_data_minus_IDs <- sky_fibre_data[, -which(names(sky_fibre_data) == "ID")]
+sky_fibre_filler_list <- rep(-99, nrow(sky_fibre_data))
 
 # Now make the tables- one for the hexabundles ("target_table") and one for the sky fibres
 # I've added NA values for the sky fibre columns which don't make sense (rads, angs, etc)
-new_properties = data.frame(cbind(probe=c(1:length(angs)),ID,pos,rads,angs,azAngs,angs_azAng))
-target_table = merge(new_properties, selected_objects, by='ID', sort=FALSE)
+new_properties <- data.frame(cbind(probe = c(1:length(angs)), ID, pos, rads, angs, azAngs, angs_azAng))
+target_table <- merge(new_properties, selected_objects, by = "ID", sort = FALSE)
 
-sky_fibre_table = cbind(probe=sky_fibre_filler_list, 
-                        ID=sky_fibre_IDs, 
-                        x=sky_fibre_data$MagnetX / 1000.0, 
-                        y=sky_fibre_data$MagnetY / 1000.0,
-                        rads=sky_fibre_filler_list,
-                        angs=sky_fibre_filler_list,
-                        azAngs=sky_fibre_filler_list,
-                        angs_azAng=sky_fibre_filler_list,
-                        sky_fibre_data_minus_IDs)
+sky_fibre_table <- cbind(
+  probe = sky_fibre_filler_list,
+  ID = sky_fibre_IDs,
+  x = sky_fibre_data$MagnetX / 1000.0,
+  y = sky_fibre_data$MagnetY / 1000.0,
+  rads = sky_fibre_filler_list,
+  angs = sky_fibre_filler_list,
+  azAngs = sky_fibre_filler_list,
+  angs_azAng = sky_fibre_filler_list,
+  sky_fibre_data_minus_IDs
+)
 
-final_table = rbind(target_table, sky_fibre_table)
+final_table <- rbind(target_table, sky_fibre_table)
 
 #* Get the IDs of guide stars which have been chosen:
-guide_IDs = fdata[match(rownames(gpos),rownames(fdata)), 'ID']
-#all_guide_data = fdata[chosen_guides,]
-#guide_IDs = gdata[chosen_guides, 'ID']
+guide_IDs <- fdata[match(rownames(gpos), rownames(fdata)), "ID"]
+# all_guide_data = fdata[chosen_guides,]
+# guide_IDs = gdata[chosen_guides, 'ID']
 #* And get the columns from the input file
-all_guide_data = gdata[match(guide_IDs, gdata$ID), ]
-#* And now add on the other rows that we need 
-new_guide_properties = data.frame(x=gpos$x, y=gpos$y, rads=grads,angs=gangs,azAngs=gazAngs,angs_azAng=gangs_gazAng)
-final_guide_table = cbind(all_guide_data, new_guide_properties)
+all_guide_data <- gdata[match(guide_IDs, gdata$ID), ]
+#* And now add on the other rows that we need
+new_guide_properties <- data.frame(x = gpos$x, y = gpos$y, rads = grads, angs = gangs, azAngs = gazAngs, angs_azAng = gangs_gazAng)
+final_guide_table <- cbind(all_guide_data, new_guide_properties)
 
 
-#Writing output files:
+# Writing output files:
 #* I've added the ability to save things to a specified output directory
 #* This is passed via argparse as 'out_dir'
-#write.table(cbind(probe=c(1:length(angs)),IDs,pos,rads,angs,azAngs,angs_azAng),file=paste(out_dir,'HECTORConfig_Hexa_',addition_to_fname, substr(f, start=1,stop=nchar(f)-4), '.txt', sep=''), row.names=FALSE)
-#write.table(cbind(probe=c(1:length(gangs)),gpos,gangs),file=paste(out_dir,'HECTORConfig_Guides_',addition_to_fname, substr(f, start=1,stop=nchar(f)-4), '.txt', sep=''), row.names=FALSE)
+# write.table(cbind(probe=c(1:length(angs)),IDs,pos,rads,angs,azAngs,angs_azAng),file=paste(out_dir,'HECTORConfig_Hexa_',addition_to_fname, substr(f, start=1,stop=nchar(f)-4), '.txt', sep=''), row.names=FALSE)
+# write.table(cbind(probe=c(1:length(gangs)),gpos,gangs),file=paste(out_dir,'HECTORConfig_Guides_',addition_to_fname, substr(f, start=1,stop=nchar(f)-4), '.txt', sep=''), row.names=FALSE)
 
 # galaxy_out_name = paste(out_dir,'HECTORConfig_Hexa_',addition_to_fname, substr(f, start=1,stop=nchar(f)-4), '.txt', sep='')
 # guide_out_name = paste(out_dir,'HECTORConfig_Guides_',addition_to_fname, substr(f, start=1,stop=nchar(f)-4), '.txt', sep='')
-print(paste('********************************************'))
-print(paste('Writing outputs to ', galaxy_out_name, sep=''))
-print(paste('********************************************'))
+print(paste("********************************************"))
+print(paste("Writing outputs to ", galaxy_out_name, sep = ""))
+print(paste("********************************************"))
 
 #* Write the final table for the hexabundles and the guides
-write.table(final_table,file=galaxy_out_name, row.names=FALSE, sep=',')
-write.table(final_guide_table, file=guide_out_name, row.names=FALSE, sep=',')
+write.table(final_table, file = galaxy_out_name, row.names = FALSE, sep = ",")
+write.table(final_guide_table, file = guide_out_name, row.names = FALSE, sep = ",")
 
 if (visualise) {
-  plot_configured_field(pos=pos,angs=angs,gpos=gpos,gangs=gangs, fieldflags=final_config$flags, aspdf=FALSE)
+  plot_configured_field(pos = pos, angs = angs, gpos = gpos, gangs = gangs, fieldflags = final_config$flags, aspdf = FALSE)
 }
 #* plot_filename = filename=paste(out_dir,'/HECTORConfig_',addition_to_fname, substr(f, start=1,stop=nchar(f)-4), '.pdf', sep='')
-plot_configured_field(filename=plot_filename,pos=pos,angs=angs,gpos=gpos,gangs=gangs, fieldflags=final_config$flags, aspdf=TRUE)
-#i=i+1
+plot_configured_field(filename = plot_filename, pos = pos, angs = angs, gpos = gpos, gangs = gangs, fieldflags = final_config$flags, aspdf = TRUE)
+# i=i+1
 
 
-#TestOutcome=cbind(itnconflicts,swapsneeded)
+# TestOutcome=cbind(itnconflicts,swapsneeded)
 
 #* Don't save the R image
 #* save.image('HECTOR_Config_v1.0_ClusterFieldsTest_width24.img')
-
-
-
-

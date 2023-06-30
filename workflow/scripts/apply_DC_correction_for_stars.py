@@ -3,8 +3,6 @@ import pandas as pd
 import datetime
 from pathlib import Path
 import matplotlib.pyplot as plt
-from hop.misc import misc_tools
-import astroplan
 import astropy.units as u
 from astroplan import Observer
 from astroplan import FixedTarget
@@ -20,7 +18,7 @@ from dateutil.parser import parse
 # parser.add_argument('--field')
 # args = parser.parse_args()
 
-smk = snakemake
+smk = snakemake # noqa
 field = smk.config['field']
 config_filename = smk.config['pipeline_config_file']
 skyfiles_location = smk.config['skyfiles_location']
@@ -29,7 +27,6 @@ filename_stem = smk.config['filename_stem']
 
 tile_fname = Path(smk.input.tile_file)
 guide_fname = Path(smk.input.guide_file)
-
 
 output_fname = smk.output.output_fname
 output_guide_fname = smk.output.output_guide_fname
@@ -68,7 +65,7 @@ AAT = Observer.at_site("sso")
 meridian_time = AAT.target_meridian_transit_time(utc_time, target)
 meridian_time_formatted = meridian_time.strftime("%Y %m %d %H %M %S")
 
-#Do some basic checks- that this target is up and it's night time!
+# Do some basic checks- that this target is up and it's night time!
 assert AAT.is_night(utc_time) & AAT.target_is_up(time, target), f"A time of {meridian_time_formatted} fails AAT.is_night() and AA.target_is_up() !!!"
 
 print(f"Configuring this field for a UT time of {meridian_time_formatted}")
@@ -80,8 +77,8 @@ obs_temperature = smk.config['obs_temp']
 
 
 # Set up the correct Hector distortion and Hector linearity files
-HP.Hector_distortion_file_location = Path(smk.config['Hector_Distortion_Location']) #Path("/Users/samvaughan/Science/Hector/HectorObservationPipeline/hop/distortion_correction/HectorTranslationSoftware/DataFiles/HectorDistortion.sds") #Path(smk.config['Hector_Distortion_Location'])
-HP.Hector_linearity_file_location = Path(smk.config['Hector_Linear_location']) #Path("/Users/samvaughan/Science/Hector/HectorObservationPipeline/hop/distortion_correction/HectorTranslationSoftware/DataFiles/HectorLinear.sds") #Path(smk.config['Hector_Linear_location'])
+HP.Hector_distortion_file_location = Path(smk.config['Hector_Distortion_Location'])  # Path("/Users/samvaughan/Science/Hector/HectorObservationPipeline/hop/distortion_correction/HectorTranslationSoftware/DataFiles/HectorDistortion.sds") #Path(smk.config['Hector_Distortion_Location'])
+HP.Hector_linearity_file_location = Path(smk.config['Hector_Linear_location'])  # Path("/Users/samvaughan/Science/Hector/HectorObservationPipeline/hop/distortion_correction/HectorTranslationSoftware/DataFiles/HectorLinear.sds") #Path(smk.config['Hector_Linear_location'])
 
 if HP.Hector_linearity_file_location.parent.name == "fit2-b-pos":
     correction_direction = "POSITIVE"
@@ -98,7 +95,7 @@ print(f"\nOptical Model Correction is {correction_direction}\n")
 print(f"Tdf linearity file is {HP.Hector_linearity_file_location}, Optical Model is {HP.Hector_distortion_file_location}")
 
 print("Running the DC code...")
-HP.apply_distortion_correction(tile_fname, guide_fname, output_fname, output_guide_fname, tile_RA=tile_RA, tile_Dec=tile_DEC, guide_stars_for_tile=guide_stars_for_tile, plot_save_filename=f'results/TilingOutputs/{field}/DistortionCorrected/{"DC"}_{tile_fname.stem}.pdf', date=meridian_time_formatted, robot_temp=robot_temperature, obs_temp=obs_temperature, label=f"test", plateID=1, distortion_file=HP.Hector_distortion_file_location, linearity_file=HP.Hector_linearity_file_location, sky_fibre_file=HP.Hector_sky_fibre_location, profit_file_dir=HP.Profit_files_location, check_sky_fibres=True, verbose=True, apply_PM_corr=True)
+HP.apply_distortion_correction(tile_fname, guide_fname, output_fname, output_guide_fname, tile_RA=tile_RA, tile_Dec=tile_DEC, guide_stars_for_tile=guide_stars_for_tile, plot_save_filename=f'results/TilingOutputs/{field}/DistortionCorrected/{"DC"}_{tile_fname.stem}.pdf', date=meridian_time_formatted, robot_temp=robot_temperature, obs_temp=obs_temperature, label="test", plateID=1, distortion_file=HP.Hector_distortion_file_location, linearity_file=HP.Hector_linearity_file_location, sky_fibre_file=HP.Hector_sky_fibre_location, profit_file_dir=HP.Profit_files_location, check_sky_fibres=True, verbose=True, apply_PM_corr=True)
 
 plt.close('all')
 print("...Done!")
@@ -115,8 +112,6 @@ tile_header = ["#PROXIMITY,220 # tiling proximity value in arcseconds\n"] + [f"#
 
 guide_header = ["#PROXIMITY,220 # tiling proximity value in arcseconds\n"] + [f"#TILING_DATE,{current_date} # Date the tile was created/configured\n"] + guide_header
 
-
-
 # read the files in again
 tile_df = pd.read_csv(output_fname, comment='#')
 guide_df = pd.read_csv(output_guide_fname, comment='#')
@@ -125,7 +120,7 @@ guide_df = pd.read_csv(output_guide_fname, comment='#')
 def save_file_with_header(outfilename, header, dataframe):
 
     # First delete the contents of the file
-    with open(outfilename, 'w') as g:
+    with open(outfilename, 'w'):
         pass
     # Now write to it
     with open(outfilename, 'a') as f:
@@ -134,7 +129,7 @@ def save_file_with_header(outfilename, header, dataframe):
             f.write(line)
 
         # Now write a comment character before the column names get written
-        # Tony requires us to do this 
+        # Tony requires us to do this
         dataframe.to_csv(f, index=False)
 
 
@@ -154,9 +149,9 @@ guide_df['x'] = guide_df['MagnetX'] / 1000.0
 guide_df['y'] = guide_df['MagnetY'] / 1000.0
 guide_df.loc[:, ["rads", "angs", "azAngs", "angs_azAng"]] = 0.0
 
-#save_file_with_header(output_fname_for_config, tile_header, tile_df)
+# save_file_with_header(output_fname_for_config, tile_header, tile_df)
 print(f"Saving 'NOT_CONFIGURED' outputs to {output_fname_for_config} and {output_guide_fname_for_config}")
 tile_df.to_csv(output_fname_for_config)
 guide_df.to_csv(output_guide_fname_for_config)
 # Write the guide file
-#save_file_with_header(output_guide_fname_for_config, guide_header, guide_df)
+# save_file_with_header(output_guide_fname_for_config, guide_header, guide_df)
