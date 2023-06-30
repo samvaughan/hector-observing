@@ -1,4 +1,10 @@
 *.fits
 *.fits.gz
+*.fld
+*.fld.too_few_galaxies
+*.jpg
+*.png
 results/*
+!results/*/Upload/*.tar.gz
 .snakemake/*
+config/*
