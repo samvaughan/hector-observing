@@ -5,6 +5,8 @@
 *.jpg
 *.png
 results/*
+!results/*/Upload
+results/*/Upload/*
 !results/*/Upload/*.tar.gz
 .snakemake/*
 config/*
