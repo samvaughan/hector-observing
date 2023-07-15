@@ -3,7 +3,7 @@ import sqlite3
 import misc
 from pathlib import Path
 
-smk = snakemake
+smk = snakemake # noqa
 
 con = sqlite3.connect(smk.input.database)
 cur = con.cursor()
@@ -71,8 +71,8 @@ old_tile = previously_configured_tiles.loc[
 # Delete any rows in the database which already have this tile ID
 if len(old_tile) > 0:
     print("\tFound a previous tile with the same tile ID")
-    assert set(df_tile.row_ID) == set(
-        old_tile.row_ID
+    assert set(df_tile.loc[df_tile['type'] == 1, 'row_ID']) == set(
+        old_tile.loc[old_tile['type'] == 1, 'row_ID']
     ), "Looks like the previous tile in the database tile with matching tile ID has different galaxies to this tile! This shouldn't happen- you'll need to sort it out!"
     print("\tDeleting the old tile from the database...")
 

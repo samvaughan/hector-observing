@@ -39,7 +39,7 @@ def get_image_source(wildcards):
     row = (df["field"] == wildcards.field) & (
         df["tile_number"] == int(wildcards.tile_number)
     )
-    return df.loc[row, "image_source"].values
+    return np.squeeze(df.loc[row, "image_source"].values)
 
 
 def get_tile_filename(wildcards):
@@ -148,11 +148,6 @@ rule configure_field:
     script:
         "scripts/HECTOR_ClusterFieldsTest.R"
 
-
-# run:
-#     shell("touch {output.configured_file} {output.configured_guide_file} {output.plot_filename}")
-
-
 rule update_header:
     message:
         "Fixing the file headers"
@@ -199,10 +194,9 @@ rule get_galaxy_cutouts:
             f"results/{master_folder}/Cutouts/{{field}}_tile_{{tile_number}}/"
         ),
     params:
-        #output_folder = f'results/{master_folder}/Cutouts/{{field}}_tile_{{tile_number}}/',
         image_source=get_image_source,
     script:
-        "scripts/get_galaxy_cutouts.py"
+        "scripts/galaxy_cutouts_{params.image_source}.py"
 
 
 rule check_tile:
@@ -271,4 +265,4 @@ rule collect_outputs:
         shell(
             "rm {output.final_folder}/Plots/hexabundlePlot_{wildcards.field}_tile_{wildcards.tile_number}_CONFIGURED_correct_header.pdf"
         )
-        shell("tar -czvf {output.final_zipped_file} {output.final_folder}")
+        shell("tar -czvf {output.final_zipped_file} -C {output.final_folder} .")
