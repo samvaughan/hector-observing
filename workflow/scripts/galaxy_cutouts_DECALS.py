@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 import warnings
 from astropy.utils.exceptions import AstropyWarning
 import misc  # noqa
+import tempfile
 
 smk = snakemake  # noqa
 
@@ -58,18 +59,20 @@ for index, row in tqdm(df.iterrows(), total=len(df)):
         with open(f"{folder}/{name}.jpg", "wb") as handler:
             handler.write(img_data)
     else:
-        tmp_fits_file = Path("tmp.fits")
-        tmp_jpg_file = Path("tmp.jpg")
-        # Save the jpg and the fits data
-        img_data = requests.get(jpg_url).content
-        with open(tmp_jpg_file, "wb") as handler:
-            handler.write(img_data)
-        fits_data = requests.get(fits_url).content
-        with open(tmp_fits_file, "wb") as handler:
-            handler.write(fits_data)
-        # Now read it in again
-        hdu = fits.open(tmp_fits_file)
-        image = plt.imread(tmp_jpg_file)
+        with tempfile.TemporaryDirectory() as tmpdirname:
+            tmp_fits_file = Path(f"{tmpdirname}/tmp.fits")
+            tmp_jpg_file = Path(f"{tmpdirname}/tmp.jpg")
+            # Save the jpg and the fits data
+            img_data = requests.get(jpg_url).content
+            with open(tmp_jpg_file, "wb") as handler:
+                handler.write(img_data)
+            fits_data = requests.get(fits_url).content
+            with open(tmp_fits_file, "wb") as handler:
+                handler.write(fits_data)
+
+            # Now read it in again
+            hdu = fits.open(tmp_fits_file)
+            image = plt.imread(tmp_jpg_file)
         # Get the WCS from the fits header
         with warnings.catch_warnings():
             warnings.simplefilter("ignore", AstropyWarning)
@@ -79,7 +82,5 @@ for index, row in tqdm(df.iterrows(), total=len(df)):
         # And save
         fig.savefig(f"{folder}/{name}.png", bbox_inches="tight")
         plt.close("all")
-        tmp_fits_file.unlink()
-        tmp_jpg_file.unlink()
 
 Path(smk.output.finished_flag).touch()

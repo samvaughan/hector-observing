@@ -50,6 +50,13 @@ args = parser.parse_args()
 tile_file = Path(args.tile_file)
 robot_file = Path(args.robot_file)
 
+# Check that we're working on the same file
+tile_filename = tile_file.stem
+robot_filename = robot_file.stem
+assert tile_filename.replace("Tile_", "") == robot_filename.replace(
+    "Robot_", ""
+), f"Looks like we're being asked to work on files from two different tiles? Filenames are {tile_filename} and {robot_filename}"
+
 swaps_list = args.swaps_list
 
 n_elements_per_pair = [len(x) for x in swaps_list]

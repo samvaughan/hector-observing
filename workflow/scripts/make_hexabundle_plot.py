@@ -410,11 +410,11 @@ order_string = f"""
 {guide_string}
 {" --> ".join(np.squeeze(sorted_guides['Hexabundle'].values))}\n
 {e1_string}
-{" --> ".join(np.squeeze(sorted_bundles.loc[sorted_bundles.exit_gap == 1,'Hexabundle'].values))}\n
+{" --> ".join(np.atleast_1d(np.squeeze(sorted_bundles.loc[sorted_bundles.exit_gap == 1,'Hexabundle'].values)))}\n
 {e2_string}
-{" --> ".join(np.squeeze(sorted_bundles.loc[sorted_bundles.exit_gap == 2,'Hexabundle'].values))}\n
+{" --> ".join(np.atleast_1d(np.squeeze(sorted_bundles.loc[sorted_bundles.exit_gap == 2,'Hexabundle'].values)))}\n
 {e3_string}
-{" --> ".join(np.squeeze(sorted_bundles.loc[sorted_bundles.exit_gap == 3,'Hexabundle'].values))}\n
+{" --> ".join(np.atleast_1d(np.squeeze(sorted_bundles.loc[sorted_bundles.exit_gap == 3,'Hexabundle'].values)))}\n
 """
 ax.annotate(
     order_string,

@@ -64,12 +64,16 @@ for index, row in tqdm(df.iterrows(), total=len(df)):
     # Do the SIAP search and convert to a pandas dataframe
     results = service.search(pos=pos, **custom).to_table().to_pandas()
     # Only keep the rows which are from the GAMA pdr, and drop duplicates
+    results = results.loc[results.obs_collection == "gama_pdr"]
     results = results.loc[
         ~results.duplicated(subset=["band_name", "em_min", "em_max"], keep="first")
     ]
-    results = results.loc[results.obs_collection == "gama_pdr"]
+    if len(results) == 0:
+        print(f"No matches for {pos}! Skipping {name}...")
+        continue
 
     hdus = {}
+    usable_files = True
     for index, image in results.iterrows():
         access_url = image.access_url
 
@@ -79,8 +83,15 @@ for index, row in tqdm(df.iterrows(), total=len(df)):
             fits_data = requests.get(image.access_url).content
             with open(fname, "wb") as handler:
                 handler.write(fits_data)
-            hdus[image.band_name] = fits.open(fname)
+            try:
+                hdus[image.band_name] = fits.open(fname)
+            except OSError:
+                print(f"No file available for {name}! Skipping...")
+                usable_files = False
 
+    # If we don't have the fits files to download, just skip this row
+    if not usable_files:
+        continue
     # Make an RGB image
     r_hdu = hdus["r"]
     g_hdu = hdus["g"]
