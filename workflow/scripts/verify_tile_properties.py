@@ -5,7 +5,7 @@ import misc
 import string
 import sqlite3
 
-smk = snakemake
+smk = snakemake  # noqa
 # Things to check against
 N_hexabundles = 19
 N_guide_stars = 6
@@ -56,6 +56,9 @@ df_robot = pd.read_csv(robot_file, skiprows=6)
 # Check the type of each hexabundle which has been allocated
 hexabundle_type = df_tile["type"].values
 
+# Make a mask for the guide stars
+guide_mask = hexabundle_type == 2
+standard_mask = hexabundle_type == 0
 print("Checking tile file contents:")
 print("\tChecking number of hexabundles...")
 assert (
@@ -73,6 +76,14 @@ print("\tChecking file length...")
 assert (
     len(df_tile) == N_lines_in_tile_file
 ), f"The tile file should have {N_lines_in_tile_file} rows! It currently has {len(df_tile)}"
+assert np.all(
+    (df_tile.loc[guide_mask, "r_mag"] > 13.0) & (df_tile.loc[guide_mask, "r_mag"] < 16)
+), "The guide stars all must have an r-band magnitudes between 13.0 and 16.0!"
+assert np.all(
+    np.isfinite(df_tile.loc[standard_mask, "g_mag"])
+    & (df_tile.loc[standard_mask, "g_mag"] > 10)
+    & (df_tile.loc[standard_mask, "g_mag"] < 20)
+), "The standard stars all must have measured and sensible g-band magnitudes!"
 
 print("Passed!")
 
@@ -142,13 +153,14 @@ print("Passed!")
 # Checking that all galaxies we've already observed are on the same spectrograph as before
 con = sqlite3.connect(smk.input.database)
 all_previously_observed_galaxies = pd.read_sql("SELECT * FROM galaxies_observed", con)
+
 # Get rid of the letter in front of the ID. FIXME: remove this when I've updated the input catalogues to include these letters
-all_previously_observed_galaxies["ID"] = pd.to_numeric(
-    all_previously_observed_galaxies["ID"].str.strip("WC")
-)
+# all_previously_observed_galaxies["ID"] = pd.to_numeric(
+#     all_previously_observed_galaxies["ID"].str.strip("WC")
+# )
 
 current_tile_galaxies = df_tile.loc[df_tile["type"] == 1].copy()
-current_tile_galaxies["ID"] = pd.to_numeric(current_tile_galaxies["ID"])
+# current_tile_galaxies["ID"] = pd.to_numeric(current_tile_galaxies["ID"])
 current_tile_galaxies["Spectrograph"] = current_tile_galaxies.apply(
     misc.get_spectrograph_from_hexabundle, axis=1
 )

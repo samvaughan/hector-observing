@@ -2,7 +2,7 @@ from hop import pipeline
 from hop.misc import misc_tools
 from pathlib import Path
 
-smk = snakemake # noqa
+smk = snakemake  # noqa
 
 DC_tile_file = Path(smk.input.DC_tile_file)
 configured_tile_file = Path(smk.input.configured_field)
