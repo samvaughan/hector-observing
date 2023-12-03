@@ -1,4 +1,3 @@
-from turtle import distance
 import matplotlib.pyplot as plt
 import pandas as pd
 import hop.hexabundle_allocation.hector.constants as constants
