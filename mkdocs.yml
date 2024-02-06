@@ -1,0 +1,8 @@
+site_name: Making_tiles_for_Hector_Observing
+
+nav:
+  - Home: 'index.md'
+  - Getting Started: 'GettingStarted.md'
+  - FAQs: 'FAQs.md'
+
+theme: material

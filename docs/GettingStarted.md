@@ -1,0 +1,23 @@
+# Getting Started at the beginning of a run
+
+ToDo: Write this up properly.
+
+## At the beginning of a run
+
+- Make a new folder with the dates of the observing run in the ```resources``` folder: e.g. ```20240306_20240318``` for an observing run between March 3rd and March 18th in 2024.
+- Take the tiles from the Hector Tiling code and transfer them into this directory.
+- Make a new file called ```{run_start_date}_{run_end_date}_galaxy_tiles.csv```, e.g. ```20240306_20240318_galaxy_tiles.csv```. This must have the columns named ```field,tile_number,filename,guide_filename,image_source```.
+- Pick a tile to make. Fill out the row in the ```{run_start_date}_{run_end_date}_galaxy_tiles.csv``` file with the correct information. The `image_source` column should be '`DECALS`' for all regions other than the G23 field- here you have to use '`KIDS`'. All filenames are relative to the main observing folder, i.e. they should begin with `resources/{run_start_date}_{run_end_date}/` etc.
+- Now update the config file, which lives in `config/`. TODO: Write up explanation for this file.
+
+
+## Making a tile
+
+- Make sure the `hector` environment has been activated. TODO: Add page about the Hector environment. 
+- Make sure the sky masks are available (i.e. plug in your external hard drive!)
+- From the main folder, run ```snakemake -npr --cores 1 --configfile config/{run_start_date}_{run_end_date}.yaml -- results/{run_start_date}_{run_end_date}/Upload/{tile_file_name}.tar.gz```. This will show you the commands which `SnakeMake` is about to run.
+- To actually execute these, run `snakemake --cores 1 --configfile config/{run_start_date}_{run_end_date}.yaml -- results/{run_start_date}_{run_end_date}/Upload/{tile_file_name}.tar.gz` (i.e. get rid of the `-npr` bit).
+
+
+All going well, the pipeline will continue and the `R` plotting window will appear. 
+

@@ -6,7 +6,8 @@ import pandas as pd
 import numpy as np
 
 # TODO: Fix this
-master_snakemake_folder = "/Users/samvaughan/Science/Hector/Observing"
+master_snakemake_folder = "/Users/stefania/Desktop/Hector/Observing"
+# master_snakemake_folder = "/Users/samvaughan/Science/Hector/Observing"
 
 Hector_Rcode_file_version = (
     f"{master_snakemake_folder}/workflow/scripts/HECTOR_Config_v3.5.R"
@@ -17,9 +18,20 @@ wildcard_constraints:
     field="|".join(config["wildcard_constraints"]["field"]),
 
 
+field = config["wildcard_constraints"]["field"]
+print(field)
+
 master_folder = config["folder"]
+
 df = pd.read_csv(config["tiles_table"], comment="#")
-tile_numbers = df["tile_number"].apply(lambda x: f"{x:03}").values.astype(str)
+# print(config["tiles_table"])
+# print(df)
+
+tile_numbers = [str(n).zfill(3) for n in df["tile_number"].values]
+print(tile_numbers)
+# tile_number = [str(n).zfill(3) for n in df["tile_number"].values]
+
+# tile_numbers = df["tile_number"].apply(lambda x: f"{str(x).zfill(3)}").values.astype(str)
 fields = df["field"].values.astype(str)
 
 # Add a check to make sure that the tile number always matches the filename
@@ -36,6 +48,7 @@ assert np.all(df["tile_number"].values == tile_numbers_from_filenames.values) & 
 
 
 def get_image_source(wildcards):
+    print("get_image_source")
     row = (df["field"] == wildcards.field) & (
         df["tile_number"] == int(wildcards.tile_number)
     )
@@ -43,6 +56,7 @@ def get_image_source(wildcards):
 
 
 def get_tile_filename(wildcards):
+    print("get_tile_filename")
     row = (df["field"] == wildcards.field) & (
         df["tile_number"] == int(wildcards.tile_number)
     )
@@ -50,6 +64,7 @@ def get_tile_filename(wildcards):
 
 
 def get_guide_filename(wildcards):
+    print("get_guide_filename")
     row = (df["field"] == wildcards.field) & (
         df["tile_number"] == int(wildcards.tile_number)
     )
