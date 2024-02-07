@@ -1,9 +1,0 @@
-field,tile_number,filename,guide_filename,image_source
-H01,1,resources/20220914/H01/Tiles/tile_001.fld,resources/20220914/H01/Tiles/guide_tile_001.fld,DECALS
-H01,101,resources/20220914/H01/Tiles/tile_101.fld,resources/20220914/H01/Tiles/guide_tile_101.fld,DECALS
-H03,1,resources/20220914/H03/Tiles/tile_001.fld,resources/20220914/H03/Tiles/guide_tile_001.fld,DECALS
-H03,2,resources/20220914/H03/Tiles/tile_002.fld,resources/20220914/H03/Tiles/guide_tile_002.fld,DECALS
-H03,101,resources/20220914/H03/Tiles/tile_101.fld,resources/20220914/H03/Tiles/guide_tile_101.fld,DECALS
-G23,1,resources/20220914/G23/Tiles/tile_001.fld,resources/20220914/G23/Tiles/guide_tile_001.fld,DECALS
-Stars,1,resources/20220914/Stars/Tiles/tile_001.fld,resources/20220914/Stars/Tiles/guide_tile_001.fld,DECALS
-Stars,2,resources/20220914/Stars/Tiles/tile_002.fld,resources/20220914/Stars/Tiles/guide_tile_002.fld,DECALS
