@@ -8,6 +8,8 @@
 *.snafu
 .DS_Store
 results/*
+!results/.gitkeep
 resources/*
+!resources/.gitkeep
 .snakemake/*
 config/*
