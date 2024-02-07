@@ -1,8 +1,14 @@
-site_name: Making_tiles_for_Hector_Observing
+site_name: Making tiles for Hector Observing
+
+site_author: Sam Vaughan
+
+repo_url: https://github.com/samvaughan/hector-observing/
+repo_name: Hector Observing
 
 nav:
   - Home: 'index.md'
-  - Getting Started: 'GettingStarted.md'
+  - Making a Hector Tile: 'Making_A_Hector_Tile.md'
+  - Scripts: 'scripts.md'
   - FAQs: 'FAQs.md'
 
 theme: material

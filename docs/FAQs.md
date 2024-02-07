@@ -2,6 +2,12 @@
 
 Below are some frequently asked questions or bugs that have arisen during our use of the pipeline.
 
+## The allocation code fails and says "Some magnets are fully blocked!"
+
+This means that there is no way for the Robot to place the magnets in the desired positions. The robot arm itself has a set clearance when it picks up and puts down magnets, and so some magnet configurations which don't clash aren't actually possible to put on the plate.
+
+In this case, you'll need to go back and use the interactive configuration tool to change the magnet positions to have a bit more clearance. The error message will let you know which magnets are affected.
+
 ## Snakemake has an error which mentions _"`The files below seem to be incomplete`"_.
 
 This happens when a `snakemake` task doesn't finish properly- often because it's been killed by someone pressing `Ctrl-C`. It's basically saying "I don't know if the files below are finished or not!".

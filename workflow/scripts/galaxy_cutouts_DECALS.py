@@ -55,7 +55,7 @@ for index, row in tqdm(df.iterrows(), total=len(df)):
     # If we're looking at a guide or a sky fibre, just get a jpg
     # If we're looking at a hexabundle, download the fits and add the hector bundle footprint
     if len(name) > 1:
-        img_data = requests.get(jpg_url).content
+        img_data = requests.get(jpg_url, verify=False).content
         with open(f"{folder}/{name}.jpg", "wb") as handler:
             handler.write(img_data)
     else:
@@ -63,10 +63,10 @@ for index, row in tqdm(df.iterrows(), total=len(df)):
             tmp_fits_file = Path(f"{tmpdirname}/tmp.fits")
             tmp_jpg_file = Path(f"{tmpdirname}/tmp.jpg")
             # Save the jpg and the fits data
-            img_data = requests.get(jpg_url).content
+            img_data = requests.get(jpg_url, verify=False).content
             with open(tmp_jpg_file, "wb") as handler:
                 handler.write(img_data)
-            fits_data = requests.get(fits_url).content
+            fits_data = requests.get(fits_url, verify=False).content
             with open(tmp_fits_file, "wb") as handler:
                 handler.write(fits_data)
 
