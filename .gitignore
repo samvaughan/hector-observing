@@ -6,6 +6,8 @@
 *.png
 *.backup
 *.snafu
+.DS_Store
 results/*
+resources/*
 .snakemake/*
 config/*
