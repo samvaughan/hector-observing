@@ -11,8 +11,6 @@
       
       
       
-        <link rel="prev" href="../scripts/">
-      
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>FAQs - Making tiles for Hector Observing</title>
+        <title>Worked Example: G15 tile 221 - Making tiles for Hector Observing</title>
       
     
     
@@ -62,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#faqs" class="md-skip">
+        <a href="#worked-example-g15-tile-221" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              FAQs
+              Worked Example: G15 tile 221
             
           </span>
         </div>
@@ -272,30 +270,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    FAQs
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../FAQs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -304,53 +282,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#the-allocation-code-fails-and-says-some-magnets-are-fully-blocked" class="md-nav__link">
-    <span class="md-ellipsis">
-      The allocation code fails and says "Some magnets are fully blocked!"
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#snakemake-has-an-error-which-mentions-the-files-below-seem-to-be-incomplete" class="md-nav__link">
-    <span class="md-ellipsis">
-      Snakemake has an error which mentions "The files below seem to be incomplete".
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#snakemake-complains-about-index-0-is-out-of-bounds-for-axis-with-size-0-and-mentions-the-_get_tile_filename-function" class="md-nav__link">
-    <span class="md-ellipsis">
-      Snakemake complains about "Index 0 is out of bounds for axis with size 0" and mentions the _get_tile_filename function.
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -375,41 +306,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#the-allocation-code-fails-and-says-some-magnets-are-fully-blocked" class="md-nav__link">
-    <span class="md-ellipsis">
-      The allocation code fails and says "Some magnets are fully blocked!"
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#snakemake-has-an-error-which-mentions-the-files-below-seem-to-be-incomplete" class="md-nav__link">
-    <span class="md-ellipsis">
-      Snakemake has an error which mentions "The files below seem to be incomplete".
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#snakemake-complains-about-index-0-is-out-of-bounds-for-axis-with-size-0-and-mentions-the-_get_tile_filename-function" class="md-nav__link">
-    <span class="md-ellipsis">
-      Snakemake complains about "Index 0 is out of bounds for axis with size 0" and mentions the _get_tile_filename function.
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -426,17 +322,8 @@
   
 
 
-<h1 id="faqs">FAQs</h1>
-<p>Below are some frequently asked questions or bugs that have arisen during our use of the pipeline.</p>
-<h2 id="the-allocation-code-fails-and-says-some-magnets-are-fully-blocked">The allocation code fails and says "Some magnets are fully blocked!"</h2>
-<p>This means that there is no way for the Robot to place the magnets in the desired positions. The robot arm itself has a set clearance when it picks up and puts down magnets, and so some magnet configurations which don't clash aren't actually possible to put on the plate.</p>
-<p>In this case, you'll need to go back and use the interactive configuration tool to change the magnet positions to have a bit more clearance. The error message will let you know which magnets are affected.</p>
-<h2 id="snakemake-has-an-error-which-mentions-the-files-below-seem-to-be-incomplete">Snakemake has an error which mentions <em>"<code>The files below seem to be incomplete</code>"</em>.</h2>
-<p>This happens when a <code>snakemake</code> task doesn't finish properly- often because it's been killed by someone pressing <code>Ctrl-C</code>. It's basically saying "I don't know if the files below are finished or not!".</p>
-<p>If you want to re-run the task which <code>snakemake</code> was in the middle of before it was killed, add <code>--rerun-incomplete</code> to the beginning of your command (e.g <code>snakemake --rerun-incomplete --configfile ...</code> etc). </p>
-<p>If you <em>don't</em> want to re-run the command that was killed, there are two options. I've found the best thing to do is delete the <code>.snakemake</code> folder: <code>rm -r .snakemake</code>. This deletes <code>snakemake's</code> history and it just forgets that it was halfway through a step. You can also follow the commands that <code>snakemake</code> suggests, about "cleaning up metadata", but I've found that this often doesn't work for some reason... (see e.g. <a href="https://github.com/snakemake/snakemake/issues/1497">this</a> github issue).</p>
-<h2 id="snakemake-complains-about-index-0-is-out-of-bounds-for-axis-with-size-0-and-mentions-the-_get_tile_filename-function">Snakemake complains about <em>"<code>Index 0 is out of bounds for axis with size 0</code>"</em> and mentions the <em><code>_get_tile_filename</code></em> function.</h2>
-<p>This happens because Snakemake is trying to select a row from your <code>{start_date}_{end_date}_galaxy_tiles.csv</code> but there aren't any matches. Check that you've typed the tile filename exactly right on the command line (it's very easy to type <code>G12_tile_220</code> instead of <code>G15_tile_220</code>, for example!)</p>
+<h1 id="worked-example-g15-tile-221">Worked Example: G15 tile 221</h1>
+<p>Below is a worked example of making G15 tile 221 ready for use at the telescope.</p>
 
 
 

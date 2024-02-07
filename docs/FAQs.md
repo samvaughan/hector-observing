@@ -1,4 +1,4 @@
-# FAQs
+# FAQs and troubleshooting
 
 Below are some frequently asked questions or bugs that have arisen during our use of the pipeline.
 
@@ -20,3 +20,18 @@ If you _don't_ want to re-run the command that was killed, there are two options
 
 This happens because Snakemake is trying to select a row from your `{start_date}_{end_date}_galaxy_tiles.csv` but there aren't any matches. Check that you've typed the tile filename exactly right on the command line (it's very easy to type `G12_tile_220` instead of `G15_tile_220`, for example!)
 
+## Snakemake says "there is no rule to make {filename}"
+
+This happens when `snakemake` can't figure out how to create the output file you've asked for. 
+
+The most common cause of this is a typo in the filename you've passed it (e.g. asking it to make `G155_tile_220.tar.gz` will fail, for example). Another possible cause would be if you're asking it to make a tile which you haven't entered in the `resources/{run_dates}/{run_dates}_galaxy_tiles.csv` file. Check that the tile is located there and doesn't have any typos.
+
+## Snakemake says "Looks like we have a mismatch between the tile numbers and the filenames somewhere"
+
+This occurs when one (or more) of the rows in the `resources/{run_dates}/{run_dates}_galaxy_tiles.csv` is incorrect. If you tell `snakemake` to use a tile file from one tile number and a guide tile from another (e.g. one row references two different numbers), or if your tile number column in that file doesn't match the filenames, you'll see this error. Go back and check that all of the rows in that file are correct!
+
+## The distortion correction code complains about "Reading past the end of a file"
+
+This means a sky mask fits file the code is trying to read is corrupted or damaged. 
+
+The distortion correction code reads _all_ fits files in the folder path you give it, so make sure there aren't any files in there which aren't sky masks. We've seen this error before when the distortion correction code tried to read a hidden file called `._segmap_waves_18.0_-34.1_1.41_1.17.fits`. After deleting this file and all the others like it, everything worked as expected.

@@ -27,4 +27,32 @@ All going well, the pipeline will continue and the `R` plotting window will appe
 
 This can take 30-60 minutes to complete, so probably best to leave it running in the background while you do something else!
 
-When the R code is complete, the allocation code will run and assign which Hexabundle (A through to U) will be placed on which target. 
+When the R code is complete, the remaining pipeline steps _usually_ complete without too much issue. If you run into an error, please check the [FAQs](FAQs.md).
+
+## Important Checks 
+
+### Checking the magnet layout
+
+Each tile **must** be checked by eye before it's uploaded to the Data Central cloud. The configuration `R` code will sometimes result in a tile which is impossible to plug. If this isn't spotted before the plate is configured by the robot at the telescope then it  results in a lost half-night of observing. No one wants that!
+
+Make sure that every hexabundle on the plate has a clear path to one of the three exits. In particular, check that there's no cases of a hexabundle tail pointing straight into the side of another magnet, and no cases where a fibre cable would get squeezed in between two other magnets. 
+
+Some common issues are shown below:
+
+![Common Failure 1: Tail pointing at another magnet](img/common_failure_1.png)
+
+This shows a tail pointing straight towards another magnet, with nowhere for the fibre cable of magnet 12 to go.
+
+![Common Failure 2: Tail pointing towards two magnets](img/common_failure_2.png)
+
+This shows a tail pointing towards a "V" made by two magnets. Again, there's nowhere for the fibre cable of magnet 14 to go.
+
+In both of these cases, you'll need to go back and change the configuration!
+
+### Checking the galaxy cutouts
+
+Occasionally, a galaxy which wouldn't be suitable for observing sneaks through our quality control checks and ends up being assigned to a Hexabundle. This might be a galaxy which is actually a nearby star, an imaging artefact or a galaxy with a bright star nearby. 
+
+We can catch these cases before the telescope by checking the imaging cutouts. These are saved in `results/{start_date}_{end_date}/Cutouts/{tile_name}`.
+
+Another important check is to make sure that **all foreground targets in the cluster tiles are placed on Spector**. If a foreground galaxy with a redshift much lower than the cluster redshift is placed on an AAOmega bundle (A through to H) then you'll need to use the `swap_hexabundles.py` script to move it to Spector (see [Scripts](scripts.md) for more info).

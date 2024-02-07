@@ -9,6 +9,6 @@ nav:
   - Home: 'index.md'
   - Making a Hector Tile: 'Making_A_Hector_Tile.md'
   - Scripts: 'scripts.md'
-  - FAQs: 'FAQs.md'
+  - FAQs and Troubleshooting: 'FAQs.md'
 
 theme: material

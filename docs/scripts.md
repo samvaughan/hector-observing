@@ -39,3 +39,22 @@ mv path/to/Guides_G15_tile_220_NOT_CONFIGURED.csv.backup pat/to/Guides_G15_tile_
 
 ## Selecting Standard Stars for a tile
 
+Occasionally you'll need to select which standard stars go into a tile (although much less regularly than for the guides!). You can do this by using the `select_standards_from_file.py` script.
+
+The input is a hexabundle file _which hasn't been configured by the R code_, i.e. it should have `NOT_CONFIGURED` in the filename. You then pass two numbers as integers on the command line. These numbers refer to the standard stars in order of distance from the centre, _not_ their ID number. We use python 0-based indexing, so passing `0` and `1` would select the two stars closest to the field centre.
+
+So to select the two standards closest to the field centre for G15 tile 220, you'd run:
+
+```bash
+python select_standards_from_file.py results/20240306_20240318/TilingOutputs/G15/Configuration/Hexas_G15_tile_220_NOT_CONFIGURED.csv 0 1
+```
+
+This script makes a backup of the `Hexas_` file and save it to the original filename with `.backup` appended to the end.
+
+Once you've selected your stars, you can then use the interactive configuration tool to load this edited file and check that these two stars aren't clashing with each other or another galaxy. If you need to pick different stars and undo your changes, you can run:
+
+```bash
+mv path/to/Hexas_G15_tile_220_NOT_CONFIGURED.csv.backup pat/to/Hexas_G15_tile_220_NOT_CONFIGURED.csv
+```
+
+and use the script again.
