@@ -35,3 +35,7 @@ This occurs when one (or more) of the rows in the `resources/{run_dates}/{run_da
 This means a sky mask fits file the code is trying to read is corrupted or damaged. 
 
 The distortion correction code reads _all_ fits files in the folder path you give it, so make sure there aren't any files in there which aren't sky masks. We've seen this error before when the distortion correction code tried to read a hidden file called `._segmap_waves_18.0_-34.1_1.41_1.17.fits`. After deleting this file and all the others like it, everything worked as expected.
+
+## Snakemake complains about "Error Tokenizing data: Expecting 5 lines of data, saw {n}"
+
+This is almost certainly caused by a typo in the `resources/{run_dates}/{run_dates}_galaxy_tiles.csv`. Check that you haven't added or forgotten a comma somewhere.

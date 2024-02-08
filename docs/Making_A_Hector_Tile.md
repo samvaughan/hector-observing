@@ -56,3 +56,10 @@ Occasionally, a galaxy which wouldn't be suitable for observing sneaks through o
 We can catch these cases before the telescope by checking the imaging cutouts. These are saved in `results/{start_date}_{end_date}/Cutouts/{tile_name}`.
 
 Another important check is to make sure that **all foreground targets in the cluster tiles are placed on Spector**. If a foreground galaxy with a redshift much lower than the cluster redshift is placed on an AAOmega bundle (A through to H) then you'll need to use the `swap_hexabundles.py` script to move it to Spector (see [Scripts](scripts.md) for more info).
+
+## Ensuring that galaxies are always repeated on the same spectrographs
+
+You might find that the `verify_tile_properties` script gives an error when a galaxy we're trying to observe in this tile was previously observed on the opposite spectrograph, i.e. tile B places a galaxy on an AAOmega bundle when tile A previously observed it with a Spector bundle.
+
+When this happens, you have to use the [swap_hexabundles.py script](scripts.md#swapping-hexabundles) to re-arrange things so that repeated galaxies are all on the same spectrographs as before.
+

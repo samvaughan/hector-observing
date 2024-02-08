@@ -19,3 +19,8 @@ The steps to make a tile are below. These are performed are performed automatica
 11. Package everything up in a nice format which can be easily uploaded to the cloud.
 
 You can now upload the `{tile_ID}.tar.gz` file to the Data Central cloud.
+
+## Tips, Tricks and things to keep in mind
+
+- The `snakemake` workflow system depends on the _filenames_ of the inputs and outputs to each rule. A lot of the headaches I've had with `snakemake` are when I think I've placed a file in one directory but it's actually in another, or when a file I've saved has a typo, etc. 
+- If you _really_ need to, you can fool some of the `snakemake` steps by seeing which files a given rule creates and making that file yourself. There _might_ be cases when this is necessary (e.g. to bypass a check we have in place) but you should really understand what you're doing in this case.
