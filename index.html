@@ -337,6 +337,26 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="interactive_tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interactive Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -397,7 +417,7 @@
 <ol>
 <li>Remove all guide stars which are outside the central 70% of the field. (<a href="https://github.com/samvaughan/hector-observing/blob/main/workflow/scripts/select_guides_within_set_radius.py"><code>select_guides_within_set_radius.py</code></a>).</li>
 <li>Copy the tile and guide tile to the <code>results/{run_start_date}_{run_end_date}/TilingOutputs/{region_name}/Tiles</code> folder.</li>
-<li>Run the distortion correction code, which turns right-ascension and declination into plate $x$ and $y$ coordinates and finds the appropriate sky-fibre positions (<a href="https://github.com/samvaughan/hector-observing/blob/main/workflow/scripts/apply_DC_correction.py"><code>run_distortion_correction_code.py</code></a>).</li>
+<li>Run the distortion correction code, which turns right-ascension and declination into plate <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> coordinates and finds the appropriate sky-fibre positions (<a href="https://github.com/samvaughan/hector-observing/blob/main/workflow/scripts/apply_DC_correction.py"><code>run_distortion_correction_code.py</code></a>).</li>
 <li>Run the configuration code, which finds magnet positions across the plate (<a href="https://github.com/samvaughan/hector-observing/blob/main/workflow/scripts/HECTOR_ClusterFieldsTest.R"><code>HECTOR_ClusterFieldsTest.R</code></a>).</li>
 <li>Fix the file headers into the correct format (<a href="https://github.com/samvaughan/hector-observing/blob/main/workflow/scripts/fix_header_after_configuration.py"><code>fix_header_after_configuration.py</code></a>).</li>
 <li>Run the allocation code, which decides which hexabundle is placed on which galaxy. This code also creates the final output files in the format required by the computers at the AAT (<a href="https://github.com/samvaughan/hector-observing/blob/main/workflow/scripts/allocate_tile_for_galaxies.py"><code>allocate_tile_for_galaxies.py</code></a>).</li>
@@ -458,6 +478,12 @@
     
     
       <script src="assets/javascripts/bundle.c18c5fb9.min.js"></script>
+      
+        <script src="javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
