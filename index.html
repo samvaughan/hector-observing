@@ -269,6 +269,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#tips-tricks-and-things-to-keep-in-mind" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips, Tricks and things to keep in mind
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -392,6 +401,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#tips-tricks-and-things-to-keep-in-mind" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips, Tricks and things to keep in mind
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -428,6 +446,11 @@
 <li>Package everything up in a nice format which can be easily uploaded to the cloud.</li>
 </ol>
 <p>You can now upload the <code>{tile_ID}.tar.gz</code> file to the Data Central cloud.</p>
+<h2 id="tips-tricks-and-things-to-keep-in-mind">Tips, Tricks and things to keep in mind</h2>
+<ul>
+<li>The <code>snakemake</code> workflow system depends on the <em>filenames</em> of the inputs and outputs to each rule. A lot of the headaches I've had with <code>snakemake</code> are when I think I've placed a file in one directory but it's actually in another, or when a file I've saved has a typo, etc. </li>
+<li>If you <em>really</em> need to, you can fool some of the <code>snakemake</code> steps by seeing which files a given rule creates and making that file yourself. There <em>might</em> be cases when this is necessary (e.g. to bypass a check we have in place) but you should really understand what you're doing in this case.</li>
+</ul>
 
 
 

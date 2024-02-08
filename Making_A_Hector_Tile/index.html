@@ -333,6 +333,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ensuring-that-galaxies-are-always-repeated-on-the-same-spectrographs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ensuring that galaxies are always repeated on the same spectrographs
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -478,6 +487,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ensuring-that-galaxies-are-always-repeated-on-the-same-spectrographs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ensuring that galaxies are always repeated on the same spectrographs
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -531,6 +549,9 @@
 <p>Occasionally, a galaxy which wouldn't be suitable for observing sneaks through our quality control checks and ends up being assigned to a Hexabundle. This might be a galaxy which is actually a nearby star, an imaging artefact or a galaxy with a bright star nearby. </p>
 <p>We can catch these cases before the telescope by checking the imaging cutouts. These are saved in <code>results/{start_date}_{end_date}/Cutouts/{tile_name}</code>.</p>
 <p>Another important check is to make sure that <strong>all foreground targets in the cluster tiles are placed on Spector</strong>. If a foreground galaxy with a redshift much lower than the cluster redshift is placed on an AAOmega bundle (A through to H) then you'll need to use the <code>swap_hexabundles.py</code> script to move it to Spector (see <a href="../scripts/">Scripts</a> for more info).</p>
+<h2 id="ensuring-that-galaxies-are-always-repeated-on-the-same-spectrographs">Ensuring that galaxies are always repeated on the same spectrographs</h2>
+<p>You might find that the <code>verify_tile_properties</code> script gives an error when a galaxy we're trying to observe in this tile was previously observed on the opposite spectrograph, i.e. tile B places a galaxy on an AAOmega bundle when tile A previously observed it with a Spector bundle.</p>
+<p>When this happens, you have to use the <a href="../scripts/#swapping-hexabundles">swap_hexabundles.py script</a> to re-arrange things so that repeated galaxies are all on the same spectrographs as before.</p>
 
 
 
